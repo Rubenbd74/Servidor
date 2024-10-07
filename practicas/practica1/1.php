@@ -17,3 +17,4 @@ if ($num1 == $num2) {
     $resultado = $num1 + $num2;
     echo "Resultado: ", $num1, " + ", $num2, " = $resultado";
 }
+
