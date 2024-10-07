@@ -18,5 +18,4 @@ $vector= [
  foreach ($vector as $key => $value) {
      echo " $key : $value </br>";
  }
-
- var_dump($vector);
+var_dump($vector);
