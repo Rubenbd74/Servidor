@@ -11,3 +11,12 @@ $peliculas = [
     "Marzo" => 0, 
     "Abril" => 17
 ];
+
+foreach ($peliculas as $key => $value) {
+    if ($value != 0) {
+        echo " $key : $value </br>";
+    }
+}
+
+
+/*/*//*/**/    
