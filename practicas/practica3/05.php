@@ -21,5 +21,4 @@ Funciones de array:
 ksort($arr), krsort($arr), 
 sort($arr), rsort($arr),
 array_values($arr), array_keys($arr),
-array_key_exists($arr, $cla), count($arr)
-*/
+array_key_exists($arr, $cla), count($arr) */
