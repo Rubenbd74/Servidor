@@ -7,7 +7,7 @@ por ejemplo el 6, sus divisores son 1,2,3 la suma de los mismos es 6. */
 echo "Número generado: ",$i = rand(1, 1000), "</br>";
 $div = 0;
 
-//$i= 6; //6 28 496 son losnumeros perfectos entre 1 y 1000;
+//$i= 6; //6 28 496 son los numeros perfectos entre 1 y 1000;
 
 for ($a = 1; $a <= $i; $a++) {
     if ($i % $a == 0 && $a != $i) {
