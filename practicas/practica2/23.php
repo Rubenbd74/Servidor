@@ -27,7 +27,9 @@
                     ]
                 ];
 
-                implode(", ", $familias["hijos"]);
+                implode("<br>", $familias);
+                implode("<br>", $familias['Los Simpson']['hijos']);
+                implode("<br>", $familias['Los Griffin']['hijos']);
                 foreach ($familias as $key => $value) {
                     echo "<li> $key </li>";
                     foreach ($value as $key => $value) {
