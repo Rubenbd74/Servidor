@@ -10,3 +10,18 @@ decir, donde está situado el puntero actualmente.
 - Avanza una posición y muestra el valor actual.
 - Coloca el puntero en la última posición y muestra su valor.
 - Retrocede una posición y muestra este valor. */
+
+$deportes = ["futbol", "baloncesto", "natación", "tenis"];
+echo count($deportes), "</br>";
+
+reset($deportes);
+echo current($deportes), "</br>";
+
+next($deportes);
+echo current($deportes), "</br>";
+
+end($deportes);
+echo current($deportes), "</br>";
+
+prev($deportes);
+echo current($deportes);
