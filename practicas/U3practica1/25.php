@@ -12,6 +12,7 @@ Haz un recorrido del array multidimensional mostrando los valores de tal manera
 que nos muestre en cada ciudad que amigos tiene */
 
 $amigos = [
+    
     "Madrid" => [
         "nombre" => "Pedro",
         "edad" => "32",
