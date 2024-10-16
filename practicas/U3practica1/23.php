@@ -18,24 +18,38 @@
                     "Los Simpson" => [
                         "padre" => "Homer",
                         "madre" => "Marge",
-                        "hijos" => ["Bart", "Lisa", "Maggie"]
+                        "hijos" => [
+                            1 => "Bart", 
+                            2 => "Lisa", 
+                            3 => "Maggie"
+                        ]
                     ],
+
                     "Los Griffin" => [
                         "padre" => "Peter",
                         "madre" => "Lois",
-                        "hijos" => ["Chris", "Meg", "Stewie"]
+                        "hijos" => [
+                            1 => "Chris", 
+                            2 => "Meg", 
+                            3 => "Stewie"
+                        ]
                     ]
                 ];
-
-                implode("<br>", $familias);
-                implode("<br>", $familias['Los Simpson']['hijos']);
-                implode("<br>", $familias['Los Griffin']['hijos']);
                 foreach ($familias as $key => $value) {
                     echo "<li> $key </li>";
-                    foreach ($value as $key => $value) {
+                    echo "<ul>";
+                    echo "<li>Padre: ", $value["padre"] . "</li>";
+                    echo "<li>Madre: ", $value["madre"] . "</li>";
+                    echo "<li>Hijos: ";
+                    echo "<ul>";
+                    foreach ($value["hijos"] as $value) {
                         echo "<li> $value </li>";
                     }
+                    echo "</ul>";
+                    echo "</li>";
+                    echo "</ul>", "</br>";
                 }
+                echo "</ul>";
             ?>
         </ul>
     </body>
