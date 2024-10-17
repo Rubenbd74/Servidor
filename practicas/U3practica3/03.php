@@ -14,10 +14,7 @@ function isPalindrome($string)
     return $cleanedString === $reversedString;
 }
 
-// Example usage
-
-//$testString = "Not a palindrome";
-if (!empty($_POST['cadena'])) {
+if (!empty($_POST['cadena'])) { //Comprobación de si $_POST está vacio
     $cadena = $_POST['cadena'];
     if (isPalindrome($cadena)) {
         echo "La cadena ", $cadena," es un palíndromo";
