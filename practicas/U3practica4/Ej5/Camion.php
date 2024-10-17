@@ -6,9 +6,8 @@ include_once 'Cuatro_ruedas.php';
         /**
          * Get de longitud
          */ 
-        public function getLongitud()
-        {
-                return $this->longitud;
+        public function getLongitud(){
+            return $this->longitud;
         }
 
         /**
@@ -16,12 +15,11 @@ include_once 'Cuatro_ruedas.php';
          *
          * @return  self
          */ 
-        public function setLongitud($longitud)
-        {
-                $this->longitud = $longitud;
-
-                return $this;
+        public function setLongitud($longitud){
+            $this->longitud = $longitud;
+            return $this;
         }
+        
         function añadir_remolque($longitud){
             $this->setLongitud($longitud);
         }

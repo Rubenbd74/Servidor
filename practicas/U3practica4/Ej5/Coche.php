@@ -6,9 +6,8 @@ include_once 'Cuatro_ruedas.php';
         /**
          * Get de numero_cadenas_nieve
          */ 
-        public function getNumero_cadenas_nieve()
-        {
-                return $this->numero_cadenas_nieve;
+        public function getNumero_cadenas_nieve(){
+            return $this->numero_cadenas_nieve;
         }
 
         /**
@@ -16,11 +15,9 @@ include_once 'Cuatro_ruedas.php';
          *
          * @return  self
          */ 
-        public function setNumero_cadenas_nieve($numero_cadenas_nieve)
-        {
-                $this->numero_cadenas_nieve = $numero_cadenas_nieve;
-
-                return $this;
+        public function setNumero_cadenas_nieve($numero_cadenas_nieve){
+            $this->numero_cadenas_nieve = $numero_cadenas_nieve;
+            return $this;
         }
 
         function añadir_cadenas_nieve($num){

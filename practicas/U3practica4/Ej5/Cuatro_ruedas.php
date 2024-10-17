@@ -5,9 +5,8 @@ include_once 'Vehiculo.php';
         /**
          * Get de numero_puertas
          */ 
-        public function getNumero_puertas()
-        {
-                return $this->numero_puertas;
+        public function getNumero_puertas(){
+            return $this->numero_puertas;
         }
 
         /**
@@ -15,11 +14,9 @@ include_once 'Vehiculo.php';
          *
          * @return  self
          */ 
-        public function setNumero_puertas($numero_puertas)
-        {
-                $this->numero_puertas = $numero_puertas;
-
-                return $this;
+        public function setNumero_puertas($numero_puertas){
+            $this->numero_puertas = $numero_puertas;
+            return $this;
         }
         function repintar($color){
             $this->setColor($color);

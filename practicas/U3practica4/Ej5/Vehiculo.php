@@ -3,8 +3,7 @@ abstract class Vehiculo {
     public $color;
     public $peso;
 
-    public function __construct($color,$peso)
-    {
+    public function __construct($color,$peso){
         $this->color = $color;
         $this->peso = $peso;
     }
@@ -19,8 +18,7 @@ abstract class Vehiculo {
     /**
      * Get de color
      */ 
-    public function getColor()
-    {
+    public function getColor(){
         return $this->color;
     }
 
@@ -29,18 +27,15 @@ abstract class Vehiculo {
      *
      * @return  self
      */ 
-    public function setColor($color)
-    {
+    public function setColor($color){
         $this->color = $color;
-
         return $this;
     }
 
     /**
      * Get de peso
      */ 
-    public function getPeso()
-    {
+    public function getPeso(){
         return $this->peso;
     }
 
@@ -49,10 +44,8 @@ abstract class Vehiculo {
      *
      * @return  self
      */ 
-    public function setPeso($peso)
-    {
+    public function setPeso($peso){
         $this->peso = $peso;
-
         return $this;
     }
     public function __toString() {
