@@ -7,7 +7,6 @@
 <?php
 
 /* Escribe una función que reciba una cadena y comprueba si es un palíndromo */
-$cadena = $_POST['cadena'];
 function isPalindrome($string)
 {
     $cleanedString = strtolower(preg_replace("/[^A-Za-z0-9]/", '', $string));
@@ -18,9 +17,11 @@ function isPalindrome($string)
 // Example usage
 
 //$testString = "Not a palindrome";
-
-if (isPalindrome($cadena)) {
-    echo "The string ", $cadena," is a palindrome.";
-} else {
-    echo "The string ", $cadena," is not a palindrome.";
+if (!empty($_POST['cadena'])) {
+    $cadena = $_POST['cadena'];
+    if (isPalindrome($cadena)) {
+        echo "La cadena ", $cadena," es un palíndromo";
+    } else {
+        echo "La cadena ", $cadena," no es un palíndromo";
+    }
 }

@@ -5,27 +5,15 @@ la incluya y la utilice. */
 
 include "matematicas.php";
 
-// Programa principal
-echo "Resolviendo la ecuación de segundo grado... </br>";
-echo "Ingrese el coeficiente a: ";
-$a = (int) fgets(STDIN);
-echo "Ingrese el coeficiente b: ";
-$b = (int) fgets(STDIN);
-echo "Ingrese el coeficiente c: ";
-$c = (int) fgets(STDIN);
+// Utilizar la función EcuacionSegundoGrado
+$a = 1;
+$b = -3;
+$c = 2;
 
-$soluciones = resolverEcuacionSegundoGrado($a, $b, $c);
+$soluciones = EcuacionSegundoGrado($a, $b, $c);
 
-if ($soluciones !== false) {
-    if (count($soluciones) == 1) {
-        if ($soluciones[0] == "Infinitas soluciones") {
-            echo "La ecuación tiene infinitas soluciones. </br>";
-        } else {
-            echo "La ecuación tiene una solución real: " . $soluciones[0] . "</br>";
-        }
-    } else {
-        echo "La ecuación tiene dos soluciones reales: " . $soluciones[0] . " y " . $soluciones[1] . "</br>";
-    }
+if ($soluciones !== FALSE) {
+    echo "Las soluciones son: </br> +b: ", $soluciones[0], "</br> -b: ", $soluciones[1];
 } else {
-    echo "La ecuación no tiene soluciones reales.</br>";
+    echo "No hay soluciones reales";
 }
