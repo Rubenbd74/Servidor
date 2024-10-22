@@ -13,4 +13,4 @@
                 echo("<li> Más de 60 años: Ya eres una persona mayor </li>");
         }
     }
-    echo("<li>Aún no me has dicho tu edad</li>   ");
+    echo("<li>Aún no me has dicho tu edad</li>");
