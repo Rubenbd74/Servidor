@@ -3,7 +3,7 @@
 
 for ($i = 0; $i < 3; $i++) {
       ?>
-        <label for=" caja<?php echo $i; ?>">
+        <label for=" caja<?php echo $i; ?>"> 
             Campo <?php echo $i; //Te imprime el valor de $i actual para cada label ?> :
         </label>
         <input type="text" name=" caja<?php echo $i; ?>" id=" caja<?php echo $i; ?>"><br>
