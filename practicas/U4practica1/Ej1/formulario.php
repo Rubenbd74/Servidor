@@ -1,7 +1,4 @@
-<html> 
-    <head> 
-        <title>Formulario1</title> 
-    </head> 
+<html>  
     <body> 
         <form method="post" action="suma.php"> 
           <label for="int">Numero 1:</label>
