@@ -17,7 +17,7 @@
                     <label for="<?php echo "(". $i. ",". $j. ")" ?>"><?php echo "(". $i. ",". $j. ")"?></label>
                     <input type="text" name="<?php echo "matriz_".$i.".".$j ?>" value="">
                 <?php
-                }?><br>
+                }?><br> 
             <?php
             }?>
             <br><input type="submit" name="calcular" value="Calcular diagonales">
