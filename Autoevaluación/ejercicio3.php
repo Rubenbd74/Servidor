@@ -23,9 +23,7 @@ if (isset($_POST['intento'])) {
         session_destroy();
         exit;
     }
-}
-
-?>
+}?>
 
 <form action="ejercicio3.php" method="post">
     <label for="jugada">Introduce un número entre 1 y 100:</label>
