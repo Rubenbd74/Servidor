@@ -12,10 +12,10 @@ if (isset($_POST['intento'])) {
     $_SESSION['intentos']++;
 
     if ($intento < $_SESSION['numero_secreto']) {
-        echo "El número secreto es mayor que $intento. Inténtalo de nuevo.";
+        echo "El número secreto es MAYOR que $intento <br> Inténtalo de nuevo.";
     } 
     elseif ($intento > $_SESSION['numero_secreto']) {
-        echo "El número secreto es menor que $intento. Inténtalo de nuevo.";
+        echo "El número secreto es MENOR que $intento <br> Inténtalo de nuevo.";
     } 
     else {
         echo "¡Enhorabuena! Has acertado el número secreto: $_SESSION[numero_secreto] en $_SESSION[intentos] intentos.";
