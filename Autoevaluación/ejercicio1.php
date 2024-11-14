@@ -12,7 +12,7 @@
             echo "</tr>";
         }?>
         </table>
-        <input type="submit" name="enviar" value="Enviar">
+        <input type="submit" name="enviar" value="Calcular">
     </form><?php
     } else {
         //Validar
