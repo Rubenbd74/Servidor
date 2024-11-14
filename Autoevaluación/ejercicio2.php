@@ -21,7 +21,7 @@ for($i=0; $i<4; $i++){
 $potencias = array(8, 4, 2, 1);
 $decimal = 0;
 for ($i = 0; $i < 4; $i++) {
-  if ($binario[$i] == '1') {
+  if ($binario[$i][0] == '1') {
     $decimal += $potencias[$i];
   }
 }
