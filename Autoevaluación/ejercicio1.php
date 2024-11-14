@@ -24,7 +24,7 @@
                 if (!is_numeric($numero) || $numero < 1 || $numero > 100) {
                     $error = true;
                     echo "Error: El valor introducido en la posición ($i, $j) no es válido. Debe ser un número entre 1 y 100.";
-                    echo "<br><a href='",$_SERVER['PHP_SELF']."'>Volver a intentarlo</a>";
+                    echo "<br><a href='",$_SERVER['PHP_SELF'],"'>Volver a intentarlo</a>";
                 }
             }
         }
