@@ -18,7 +18,7 @@
 
     for ($i = 0; $i < 4; $i++) {
         if ($binario[$i][0] == '1') {
-            echo "<img src='imagenes/".$potencias[$i].".JPG' alt='Carta ".$potencias[$i]."'>";
+            echo "<img src='imagenes/",$potencias[$i],".JPG' alt='Carta ",$potencias[$i],"'>";
         } else {
             echo "<img src='imagenes\blanco.JPG' alt='Carta 0'>";
         }
