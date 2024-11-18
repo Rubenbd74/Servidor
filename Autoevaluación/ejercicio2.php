@@ -15,6 +15,8 @@
         }
     }
 
+    //falta mostrar el numero en binario.
+
     for ($i = 0; $i < 4; $i++) {
         if ($binario[$i][0] == '1') {
             echo "<img src='imagenes/",$potencias[$i],".JPG' alt='Carta ",$potencias[$i],"'>";
