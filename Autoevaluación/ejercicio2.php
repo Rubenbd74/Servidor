@@ -1,20 +1,18 @@
 <?php
     session_start();
 
-    $binario = array();
+    $binario = array(); // $bin = [rand(0,1), rand(0,1), rand(0,1), rand(0,1)];
     for($i=0; $i<4; $i++){
         $binario[$i][0] = rand(0,1);
     }
 
     $potencias = array(8, 4, 2, 1);
-    $decimal = 0;
+    $_SESSION['decimal'] = 0;
     for ($i = 0; $i < 4; $i++) {
         if ($binario[$i][0] == '1') {
-            $decimal += $potencias[$i];
+            $_SESSION['decimal'] = $_SESSION['decimal'] + $potencias[$i];
         }
     }
-
-    $_SESSION['decimal'] = $decimal;
 
     for ($i = 0; $i < 4; $i++) {
         if ($binario[$i][0] == '1') {
