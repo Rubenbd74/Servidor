@@ -23,7 +23,6 @@
             echo "<img src='imagenes\blanco.JPG' alt='Carta 0'>";
         }
     }
-
 ?>
 <form action="ejercicio21.php" method="post">
     <label for="decimal">Introduce el número decimal:</label>
