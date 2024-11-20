@@ -30,4 +30,4 @@ echo '<style>body { background-color: ' . $backgroundColor . '; }</style>';
   <input type="radio" id="blue" name="color" value="blue" <?php if ($backgroundColor == 'blue') echo 'checked'; ?>>
   <label for="blue">Azul</label><br>
   <input type="submit" value="Crear cookie">
-</for
+</form
