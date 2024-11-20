@@ -14,8 +14,8 @@ if (isset($_POST['usu']) && isset($_POST['contraseña'])) {
 ?>
 <form>
     <label for="usu">Usuario:</label>
-    <input type="text" name="usu"><br>
+    <input type="text" name="usu"><br><br>
     <label for="contraseña">Contraseña:</label>
-    <input type="password" name="contraseña"><br>
+    <input type="password" name="contraseña"><br><br>
     <input type="submit" value="Entrar">
 </form>
