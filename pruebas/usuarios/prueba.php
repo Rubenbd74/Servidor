@@ -6,7 +6,6 @@
     <input type="submit" value="Entrar">
 </form>
 
-
 <?php
 session_start();
 
@@ -20,5 +19,4 @@ if (isset($_POST['usu']) && isset($_POST['contraseña'])) {
         echo 'Usuario y/o contraseña incorrectos';
     }
 }
-
 ?>
