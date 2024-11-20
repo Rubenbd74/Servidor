@@ -3,6 +3,7 @@
     <input type="text" name="usu"><br><br>
     <label for="contraseña">Contraseña:</label>
     <input type="password" name="contraseña"><br><br>
+    <label for="registrarse"><?php echo "<a href='registrarse.php'>Registrarse:</a>" ?></label>
     <input type="submit" value="Entrar">
 </form>
 
