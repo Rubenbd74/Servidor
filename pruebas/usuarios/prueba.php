@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $usu = 'pepito';
 $contraseña = '123';
@@ -12,7 +13,7 @@ if (isset($_POST['usu']) && isset($_POST['contraseña'])) {
 }
 
 ?>
-<form>
+<form action="prueba.php" method="post">
     <label for="usu">Usuario:</label>
     <input type="text" name="usu"><br><br>
     <label for="contraseña">Contraseña:</label>
