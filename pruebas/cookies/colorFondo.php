@@ -13,6 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $color = $_POST['color'];
   setcookie('backgroundColor', $color, time() + 30 * 24 * 60 * 60); // 30 días
   $backgroundColor = $color;
+  echo 'Cookie establecida con el color de fondo: ' . $backgroundColor;
+  header("Refresh:0");
 }
 
 // Establecer el color de fondo
