@@ -14,7 +14,7 @@ $contraseña = '123';
 
 if (isset($_POST['usu']) && isset($_POST['contraseña'])) {
     if ($_POST['usu'] == $usu && $_POST['contraseña'] == $contraseña) {
-        echo 'Bienvenido ', $_POST['usu'];
+        echo 'Usuario y contraseña correctos <br> Bienvenido ', $_POST['usu'];
     } else {
         echo 'Usuario y/o contraseña incorrectos';
     }
