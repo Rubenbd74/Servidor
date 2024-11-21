@@ -13,16 +13,15 @@ session_start();
 $usu = 'pepito';
 $contraseña = '123';
 
-if (isset($_POST['registrarse'])) {
-    $usu = $_POST['usu'];
-    $contraseña = $_POST['contraseña'];
+if (isset($_SESSION['usu']) && isset($_SESSION['contraseña'])) {
+    $usu = $_SESSION['usu'];
+    $contraseña = $_SESSION['contraseña'];
 }
 
 if (isset($_POST['usu']) && isset($_POST['contraseña'])) {
     if ($_POST['usu'] == $usu && $_POST['contraseña'] == $contraseña) {
-        echo 'Usuario y contraseña correctos <br> Bienvenido ', $_POST['usu'];
+        echo 'Usuario y contraseña correctos <br> Bienvenido ', $usu;
     } else {
         echo 'Usuario y/o contraseña incorrectos';
     }
 }
-?>

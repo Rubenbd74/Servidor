@@ -16,7 +16,9 @@ session_start();
 
 if (isset($_POST['usu']) && isset($_POST['contraseña']) && isset($_POST['contraseña1'])) {
     if ($_POST['contraseña'] == $_POST['contraseña1']) {
-        echo 'Se ha registrado correctamente el usuario ', $_POST['usu'], ' con rol ', $_POST['rol'], '<br> <a href="prueba.php">Acceder</a>';
+        $_SESSION['usu'] = $_POST['usu'];
+        $_SESSION['contraseña'] = $_POST['contraseña'];
+        echo 'Se ha registrado correctamente el usuario ', $_POST['usu'], ' con rol ', $_POST['rol'], '<br> <a href="acceso.php">Acceder</a>';
     } else {
         echo 'Las contrasenas no coinciden';
     }
