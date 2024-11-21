@@ -5,9 +5,9 @@
     <input type="password" name="contraseña"><br><br>
     <label for="contraseña">Confirmar Contraseña:</label>
     <input type="password" name="contraseña1"><br>
-    <label for="rol">Rol:</label>
-    <input type="radio" name="rol" value="Estandar">Estandar
-    <input type="radio" name="rol" value="Premium">Premium
+    <label for="rol">Rol:</label><br>
+    <input type="radio" name="rol" value="Estandar">Estandar<br>
+    <input type="radio" name="rol" value="Premium">Premium<br>
     <input type="submit" value="Registrar">
 </form>
 
