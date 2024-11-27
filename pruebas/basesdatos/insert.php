@@ -4,7 +4,7 @@
  if ($conn->connect_error) die("Fatal Error");
 
 
- $query = "INSERT INTO usuarios usu,contra,rol VALUES ('Yolanda','Y','jugador')";/*('".$_POST['usu']."','".$_POST['contra']."','".$_POST['rol']."')"; */
+ $query = "INSERT INTO usuarios (usu, contra, rol) VALUES ('Yolanda','Y','jugador')";/*('".$_POST['usu']."','".$_POST['contra']."','".$_POST['rol']."')"; */
  $result = $conn->query($query);
  if (!$result) die("Fatal Error");
 
