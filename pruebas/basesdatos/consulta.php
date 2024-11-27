@@ -20,4 +20,7 @@ for ($j = 0; $j < $rows; ++$j) {
     echo 'Rol: ' . htmlspecialchars($row['rol']) . '<br><br>'; 
 
 }
+
+$conn->close();
+
 ?> 
