@@ -1,6 +1,6 @@
 <?php // login.php 
- $hn = 'localhost:8080'; 
- $db = 'publications'; 
- $un = 'username'; 
- $pw = 'password'; 
+ $hn = 'localhost'; 
+ $db = 'bdsimon'; 
+ $un = 'root'; 
+ $pw = ''; 
 ?> 
