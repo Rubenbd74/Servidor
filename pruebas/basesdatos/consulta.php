@@ -4,7 +4,6 @@
  if ($conn->connect_error) die("Fatal Error");
 
 
-
  $query = "SELECT usu,contra FROM usuarios";
  $result = $conn->query($query);
  if (!$result) die("Fatal Error");
@@ -17,6 +16,6 @@ for ($j = 0; $j < $rows; ++$j) {
 
 
     echo 'Usuario: ' . htmlspecialchars($row['usu']) . '<br>';
-    echo 'Contraseña: ' . htmlspecialchars($row['contra']) . '<br><br>';
+    echo 'Contraseña: ' . htmlspecialchars($row['rol']) . '<br><br>';
 }
 ?> 
