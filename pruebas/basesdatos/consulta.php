@@ -4,7 +4,7 @@
  if ($conn->connect_error) die("Fatal Error");
 
 
- $query = "SELECT usu,contra FROM usuarios";
+ $query = "SELECT usu,rol FROM usuarios";
  $result = $conn->query($query);
  if (!$result) die("Fatal Error");
  $rows = $result->num_rows; 
