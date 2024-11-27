@@ -1,6 +1,6 @@
 <?php // login.php 
  $hn = 'localhost'; 
  $db = 'bdsimon'; 
- $un = 'root'; 
- $pw = ''; 
+ $un = 'jugador'; // 'root'
+ $pw = 'jugador'; 
 ?> 
