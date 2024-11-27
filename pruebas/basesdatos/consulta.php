@@ -22,5 +22,5 @@ for ($j = 0; $j < $rows; ++$j) {
 }
 
 $conn->close();
-
+echo 'Usuario: ' . htmlspecialchars($row['usu']) . '<br>';
 ?> 
