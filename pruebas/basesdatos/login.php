@@ -2,5 +2,5 @@
  $hn = 'localhost'; 
  $db = 'bdsimon'; 
  $un = 'jugador'; // 'root'
- $pw = 'jugador'; 
+ $pw = 'jugador'; // ' '
 ?> 
