@@ -32,22 +32,28 @@
 
                 echo 'No existe el usuario o la contraseña es incorrecta <br>';
                 echo '<a href="consultaUsu.php">pantalla inicio</a>';
+                $mostrar = false;
             }
-                
         }
+        
+        else {
+            $mostrar = true;
+        }
+
         $conn->close();
     ?>
-
-        <form action ="#" method ="post">
-            <label>Usuario</label>
-            <input type="text" name="usu">
-            <br>
-            <label>Contraseña</label>
-            <input type="password" name="contra">
-            <br>
-            <a href="registro.php">REGISTRARSE</a>
-            <br>
-            <button type="submit" name='submit'>Iniciar Sesion</button>
-        </form>
+        <?php if ($mostrar === true) { ?>
+            <form action ="#" method ="post">
+                <label>Usuario</label>
+                <input type="text" name="usu">
+                <br>
+                <label>Contraseña</label>
+                <input type="password" name="contra">
+                <br>
+                <a href="registro.php">REGISTRARSE</a>
+                <br>
+                <button type="submit" name='submit'>Iniciar Sesion</button>
+            </form>
+        <?php } ?>
     </body>
 </html>
