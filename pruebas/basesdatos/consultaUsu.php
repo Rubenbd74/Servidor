@@ -46,7 +46,6 @@
             <form action ="#" method ="post">
                 <label>Usuario</label>
                 <input type="text" name="usu">
-                <br>
                 <label>Contraseña</label>
                 <input type="password" name="contra">
                 <br>
