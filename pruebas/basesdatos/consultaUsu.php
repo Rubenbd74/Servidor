@@ -31,7 +31,7 @@
             else {
 
                 echo 'No existe el usuario o la contraseña es incorrecta';
-                header("Location: consultaUsu.php");
+                echo '<a href="consultaUsu.php">pantalla inicio</a>';
             }
                 
         }
