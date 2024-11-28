@@ -37,8 +37,6 @@
         
     }
     $conn->close();
-    
-
 
     ?>
 <form action ="#" method ="post">
