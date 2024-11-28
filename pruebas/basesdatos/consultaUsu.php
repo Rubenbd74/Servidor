@@ -48,8 +48,8 @@
                 <input type="text" name="usu" required>
                 <label>Contraseña:</label>
                 <input type="password" name="contra" required>
-                <br><br>
-                <a href="registro.php">Registrarse</a>
+                <br>
+                <a href="registro.php">Registrarse</a><br><br>
                 <button type="submit" name='submit'>Iniciar Sesion</button>
             </form>
         <?php } ?>
