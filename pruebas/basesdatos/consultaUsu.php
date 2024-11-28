@@ -30,7 +30,7 @@
             
             else {
 
-                echo 'No existe el usuario o la contraseña es incorrecta';
+                echo 'No existe el usuario o la contraseña es incorrecta <br>';
                 echo '<a href="consultaUsu.php">pantalla inicio</a>';
             }
                 
