@@ -1,39 +1,33 @@
 <?php
 require_once 'login.php';
-$conn = new mysqli($hn, $un, $pw, $db,3306);
- if ($conn->connect_error) die("Fatal Error");
+$conn = new mysqli($hn, $un, $pw, $db, 3306);
+if ($conn->connect_error) die("Fatal Error");
 
-
- session_start();
+session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usu = $_POST['usu'];
     $contra = $_POST['contra'];
     $conf = $_POST['conf'];
- 
     $rol = isset($_POST['rol']) ? $_POST['rol'] : 'jugador';
- 
+
     if ($contra === $conf) {
-        
-        if (isset($_SESSION['usuarios'][$usu])) {
+
+        $query = "SELECT * FROM usuarios WHERE usu = '$usu'";
+        $result = $conn->query($query);
+        if ($result->num_rows > 0) {
             echo "Error: Ya existe un usuario con ese nombre. Elige otro.<br>";
             echo '<a href="registro.php">Volver al registro</a>';
         } 
-         
-        else {
         
-            $_SESSION['usuarios'][$usu] = [
-                'contra' => $contra,
-                'rol' => $rol,
-            ];
-            echo "Registro exitoso. Bienvenido, $usu. Tu rol es: $rol.<br>";
-            $query = "INSERT INTO usuarios (usu, contra, rol) VALUES ($usu, $contra, $rol)";
+        else {
+
+            $query = "INSERT INTO usuarios (usu, contra, rol) VALUES ('$usu', '$contra', '$rol')";
             $result = $conn->query($query);
             if (!$result) die("Fatal Error");
 
             if ($conn->affected_rows == 1) {
                 echo "Usuario insertado correctamente";
-            } 
-            else {
+            } else {
                 echo "Error al insertar usuario";
             }
             echo '<a href="consultaUsu.php">Ir al inicio de sesión</a>';
@@ -41,12 +35,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } 
     
     else {
-         echo "Error: Las contraseñas no coinciden. Por favor, vuelve a intentarlo.<br>";
-         echo '<a href="registro.php">Volver al registro</a>';
+        echo "Error: Las contraseñas no coinciden. Por favor, vuelve a intentarlo.<br>";
+        echo '<a href="registro.php">Volver al registro</a>';
     }
 }
-
 $conn->close();
+
 ?>
 
 <!DOCTYPE html>
