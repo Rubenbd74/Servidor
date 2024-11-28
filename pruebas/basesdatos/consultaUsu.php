@@ -44,11 +44,11 @@
     ?>
         <?php if ($mostrar === true) { ?>
             <form action ="#" method ="post">
-                <label>Usuario</label>
+                <label>Usuario:</label>
                 <input type="text" name="usu">
-                <label>Contraseña</label>
+                <label>Contraseña:</label>
                 <input type="password" name="contra">
-                <br>
+                <br><br>
                 <button type="submit" name='submit'>Iniciar Sesion</button>
             </form>
         <?php } ?>
