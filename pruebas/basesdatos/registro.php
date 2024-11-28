@@ -4,7 +4,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usu = $_POST['usu'];
     $pass = $_POST['pass'];
     $conf = $_POST['conf'];
-    $rol = isset($_POST['rol']) ? $_POST['rol'] : 'estandar';
+
+    $rol = isset($_POST['rol']) ? $_POST['rol'] : 'jugador';
 
     if ($pass === $conf) {
         
@@ -40,8 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         Contraseña: <input type="password" name="pass" required><br><br>
         Confirmar contraseña: <input type="password" name="conf" required><br><br>
         Rol:<br>
-        Estandar <input type="radio" name="rol" value="estandar" checked><br>
-        Premium <input type="radio" name="rol" value="premium"><br><br>
+        Jugador <input type="radio" name="rol" value="jugador" checked><br>
         <input type="submit" value="REGISTRARSE">
     </form>
 </body>

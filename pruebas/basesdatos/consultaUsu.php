@@ -3,6 +3,18 @@
         <title>Sesiones</title>
     </head>
     <body>
+        <?php if ($mostrar === true) { ?>
+            <form action ="#" method ="post">
+                <label>Usuario:</label>
+                <input type="text" name="usu" required>
+                <label>Contraseña:</label>
+                <input type="password" name="contra" required>
+                <br><br>
+                <button type="submit" name='submit'>Iniciar Sesion</button>
+            </form>
+        <?php } ?>
+    </body>
+</html>
 
     <?php
         require_once 'login.php';
@@ -42,15 +54,4 @@
 
         $conn->close();
     ?>
-        <?php if ($mostrar === true) { ?>
-            <form action ="#" method ="post">
-                <label>Usuario:</label>
-                <input type="text" name="usu" required>
-                <label>Contraseña:</label>
-                <input type="password" name="contra" required>
-                <br><br>
-                <button type="submit" name='submit'>Iniciar Sesion</button>
-            </form>
-        <?php } ?>
-    </body>
-</html>
+    
