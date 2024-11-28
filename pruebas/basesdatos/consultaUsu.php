@@ -45,9 +45,9 @@
         <?php if ($mostrar === true) { ?>
             <form action ="#" method ="post">
                 <label>Usuario:</label>
-                <input type="text" name="usu">
+                <input type="text" name="usu" required>
                 <label>Contraseña:</label>
-                <input type="password" name="contra">
+                <input type="password" name="contra" required>
                 <br><br>
                 <button type="submit" name='submit'>Iniciar Sesion</button>
             </form>
