@@ -27,6 +27,8 @@
                 echo '<br>';
                 echo '<strong>Usuario: </strong>' . htmlspecialchars($rows['usu']) . '<br>';
                 echo '<strong>Contraseña: </strong>' . htmlspecialchars($rows['contra']) . '<br>';
+                echo '<a href="consultaUsu.php">pantalla inicio</a>';
+
                 $mostrar = false;
             
             }
