@@ -54,7 +54,6 @@ $conn->close();
     <title>Registro</title>
 </head>
     <body>
-        <h2>Registro</h2>
         <?php if ($mostrar === true) { ?>
         <form method="POST" action="registro.php">
             Nombre: <input type="text" name="usu" required><br><br>
