@@ -8,6 +8,8 @@
         require_once 'login.php';
         $conn = new mysqli($hn, $un, $pw, $db);
         if ($conn->connect_error) die("Fatal Error");
+
+        $mostrar = true;
         
         if (!empty($_POST['usu'])&& !empty($_POST['contra'])) {
             $input_usu = $_POST['usu'];
