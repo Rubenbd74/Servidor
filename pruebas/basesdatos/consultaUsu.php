@@ -27,6 +27,7 @@
                 echo '<br>';
                 echo '<strong>Usuario: </strong>' . htmlspecialchars($rows['usu']) . '<br>';
                 echo '<strong>Contraseña: </strong>' . htmlspecialchars($rows['contra']) . '<br>';
+                $mostrar = false;
             
             }
             
