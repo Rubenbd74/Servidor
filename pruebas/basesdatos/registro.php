@@ -59,7 +59,7 @@ $conn->close();
     <h2>Registro</h2>
     <form method="POST" action="registro.php">
         Nombre: <input type="text" name="usu" required><br><br>
-        Contraseña: <input type="password" name="pass" required><br><br>
+        Contraseña: <input type="password" name="contra" required><br><br>
         Confirmar contraseña: <input type="password" name="conf" required><br><br>
         Rol:<br>
         Jugador <input type="radio" name="rol" value="jugador" checked><br>
