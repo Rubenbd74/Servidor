@@ -49,6 +49,7 @@
                 <label>Contraseña:</label>
                 <input type="password" name="contra" required>
                 <br><br>
+                <a href="registro.php">Registrarse</a>
                 <button type="submit" name='submit'>Iniciar Sesion</button>
             </form>
         <?php } ?>
