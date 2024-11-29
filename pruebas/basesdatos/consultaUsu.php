@@ -12,6 +12,7 @@
         $mostrar = true;
         
         if (!empty($_POST['usu'])&& !empty($_POST['contra'])) {
+            
             $input_usu = $_POST['usu'];
             $input_contra = $_POST['contra'];
         
@@ -21,6 +22,7 @@
             $result = $conn->query($query);
             
             if ($result && ($result->num_rows >0)) {
+
                 echo'Se ha inciado sesion correctamente';
                 $rows = $result->fetch_assoc(); 
         
