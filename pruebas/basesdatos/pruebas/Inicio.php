@@ -37,13 +37,13 @@
         }
     }
     color($col1, $col2, $col3, $col4);
-    $combinacion_correcta = [$col1, $col2, $col3, $col4];
+    $_SESSION['combinacion_correcta'] = [$col1, $col2, $col3, $col4];
     ?>
     
 
     <form action="Jugar.php" method="POST">
         <input type="submit" name="submit" value="Vamos a jugar">
-        <input type="hidden" name="combinacion_correcta" value="<?php echo implode(',', $combinacion_correcta); ?>"/>
+        <input type="hidden" name="combinacion_correcta" value="<?php echo implode(',', $SESSION['combinacion_correcta']); ?>"/>
     </form>
 </body>
 </html>
