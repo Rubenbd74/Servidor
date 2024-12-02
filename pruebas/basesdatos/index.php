@@ -51,7 +51,7 @@ for ($i=0; $i <4 ; $i++) {
 ?>
 
 <!-- Formulario para recargar la página y generar un nuevo color -->
-<form action="intento.php" method="POST">
+<form action="pregunta.php" method="POST">
     <button class="button" name="boton" type="submit">Enviar</button>
 </form>
 </body>
