@@ -41,7 +41,7 @@ for ($i=0; $i <4 ; $i++) {
     $randomColor[$i] = $colors[array_rand($colors)];
 ?>
     <div class="circle" style="background-color: <?php echo $randomColor[$i]; ?>;">
-        <?php echo ucfirst($randomColor[$i]); /*Primera letra en mayuscula*/?> 
+        <?php //echo ucfirst($randomColor[$i]); /*Primera letra en mayuscula*/?>
     </div>
 <?php 
 }
