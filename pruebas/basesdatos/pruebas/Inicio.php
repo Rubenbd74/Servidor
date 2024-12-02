@@ -42,7 +42,7 @@
     
 
     <form action="Jugar.php" method="get">
-        <input type="hidden" name="combinacion_correcta" value="<?php echo implode(',', $combinacion_correcta); ?>">
+        <input type="hidden" name="combinacion_correcta" value="<?php echo implode(',', $combinacion_correcta); ?>"/>
         <input type="submit" name="submit" value="Vamos a jugar">
     </form>
 </body>
