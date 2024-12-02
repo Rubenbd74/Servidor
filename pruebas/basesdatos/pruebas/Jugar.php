@@ -29,7 +29,7 @@
     if (!isset($_SESSION['contador'])) {
         $_SESSION['contador'] = 0;
         $_SESSION['colors'] = ['black', 'black', 'black', 'black'];
-        $_SESSION['combinacion_correcta'] = ['red', 'blue', 'yellow', 'green'];
+        $_SESSION['combinacion_correcta'] = explode(',', $_POST['combinacion_correcta']);
     } else {
         if (isset($_POST['color'])) {
             $_SESSION['colors'][$_SESSION['contador']] = $_POST['color'];
