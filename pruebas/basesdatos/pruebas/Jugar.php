@@ -47,8 +47,10 @@
     
         if ($_SESSION['colors'] == $_SESSION['combinacion_correcta']) {
             header("Location: acierto.php");
+            unset($_SESSION['combinacion_correcta']);
         } else {
             header("Location: fallo.php");
+            unset($_SESSION['combinacion_correcta']);
         }
     }
     
