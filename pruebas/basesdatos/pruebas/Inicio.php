@@ -37,7 +37,7 @@
         }
     }
     color($col1, $col2, $col3, $col4);
-    $_SESSION['combinacion_correcta'] = [$col1, $col2, $col3, $col4];
+    $combinacion_correcta = [$col1, $col2, $col3, $col4];
     ?>
     
 
