@@ -21,6 +21,14 @@ de este módulo satisfactoriamente.
 Se facilita un módulo de php llamado entrada.php, dicho módulo es un formulario de entrada que pide login y clave como el que se puede 
 ver debajo
 
+Pantalla a mostrar:
+
+Iniciar sesión                          Iniciar sesión 
+                                        Credenciales incorrectas. Inténtalo de nuevo.
+Usuario: cuadro de texto                Usuario: cuadro de texto
+Contraseña: cuadro de texto             Contraseña: cuadro de texto
+Entrar                                  Entrar
+
 Ejercicio 1 – Introducir el resultado del jeroglífico del día (6 puntos)
 Crear un módulo llamado mostrarcartas.php. Este módulo consiste en un juego de cartas en las que aparecen seis cartas boca abajo 
 siempre en parejas de dos colocadas de forma aleatoria, se muestran a continuación alguna de las combinaciones posibles. 
