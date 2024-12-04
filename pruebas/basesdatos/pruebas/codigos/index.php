@@ -1,11 +1,12 @@
 <?php
+require_once 'login.php';
 session_start();
 
 if (isset($_POST['usuario']) && isset($_POST['clave'])) {
     $usuario = $_POST['usuario'];
     $clave = $_POST['clave'];
 
-    $conexion = mysqli_connect("localhost", "root", "", "bdsimon");
+    $conexion = mysqli_connect("localhost", "root", "", "bd_simon");
     $sql = "SELECT * FROM usuarios WHERE usuario='$usuario' AND clave='$clave'";
     $result = mysqli_query($conexion, $sql);
 
