@@ -31,7 +31,7 @@ $pares_seleccionados = array();
 
 // Muestra la pantalla de juego
 ?><html>
-    <h1><?php  "Bienvenid@, " . $_SESSION['usuario'] ?></h1>
+    <h1><?php  "Bienvenid@, " . $_SESSION['login'] ?></h1>
     <p><?php  "Cartas levantadas: $cartas_levantadas" ?></p>
     <form action='' method='post'>
         <input type='submit' name='levantar_carta' value='Levantar carta 1'/>
