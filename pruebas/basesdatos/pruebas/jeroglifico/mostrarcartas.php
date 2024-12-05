@@ -53,7 +53,7 @@ if (!isset($_SESSION['cartas_levantadas'])) {
         <input type='submit' name='comprobar' value='Comprobar'/>
     </form>
     <style>
-        .carta {
+        .cartas {
             width: 260px; height: 400px;
             margin: 10px; 
             display: inline-block;
