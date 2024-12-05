@@ -48,7 +48,8 @@ if (!isset($_SESSION['cartas_levantadas'])) {
     </form>
     <style>
         .carta {
-            width: 260px; height: 400px; 
+            width: 260px; height: 400px;
+            margin: 10px; 
             display: inline-block;
         }
     </style>
@@ -58,8 +59,6 @@ if (!isset($_SESSION['cartas_levantadas'])) {
 if (isset($_POST['levantar_carta'])) {
     $carta_seleccionada = explode(' ', $_POST['levantar_carta']);
     $carta_seleccionada = end($carta_seleccionada);
-    // Muestra la carta seleccionada
-    echo "<div class='carta seleccionada' data-value='" . $carta_seleccionada . "'><img src='" . $combinacion[$carta_seleccionada - 1] . "' alt='Carta " . $carta_seleccionada . "'/></div>";
     // Incrementa el número de cartas levantadas
     $_SESSION['cartas_levantadas']++;
     // Pone de nuevo todas las cartas boca abajo excepto la que se ha pulsado el botón
