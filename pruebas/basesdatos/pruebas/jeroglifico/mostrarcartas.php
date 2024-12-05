@@ -47,9 +47,9 @@ if (!isset($_SESSION['cartas_levantadas'])) {
         <input type='submit' name='comprobar' value='Comprobar'/>
     </form>
     <div class='cartas'>
-        <?php for ($i = 0; $i < 6; $i++) { ?>
-            <img src='boca_abajo.jpg' alt='Carta <?= $i + 1 ?>' class='carta' data-value='<?= $i ?>'/>
-        <?php } ?>
+        <?php for ($i = 0; $i < 6; $i++) { 
+           echo "<img src='boca_abajo.jpg' alt='Carta <?= $i + 1 ?>'>";
+         } ?>
     </div>
 
 <?php
