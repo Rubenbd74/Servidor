@@ -56,7 +56,7 @@ if (!isset($_SESSION['cartas_levantadas'])) {
 
 <?php
 // Procesa la acción de levantar carta
-if (isset($_POST['levantar_carta'])) {
+if (isset($_SESSION['levantar_carta'])) {
     $carta_seleccionada = explode(' ', $_POST['levantar_carta']);
     $carta_seleccionada = end($carta_seleccionada);
     // Incrementa el número de cartas levantadas
