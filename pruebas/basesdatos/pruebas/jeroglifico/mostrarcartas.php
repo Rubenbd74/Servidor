@@ -7,7 +7,7 @@ if (!isset($_SESSION['login'])) {
     exit();
 }
 
-// Genera una combinación de 6 cartas aleatoria en parejas de 2
+// Genera una combinación aleatoria de 6 cartas con combinaciones de 2
 $cartas = array(
     "copas_02.jpg",
     "copas_03.jpg",
@@ -26,20 +26,18 @@ for ($i = 0; $i < 3; $i++) {
 shuffle($combinacion);
 
 // Inicializa las variables de juego
-$cartas_levantadas = 0;
-$pares_seleccionados = array();
+if (!isset($_SESSION['cartas_levantadas'])) {
+    $_SESSION['cartas_levantadas'] = 0;
+}
 
 // Muestra la pantalla de juego
-?><html>
+?>
     <h1><?= "Bienvenid@, " . $_SESSION['login'] ?></h1>
-    <p><?=  "Cartas levantadas: $cartas_levantadas" ?></p>
+    <p><?=  "Cartas levantadas: " . $_SESSION['cartas_levantadas'] ?></p>
     <form action='' method='post'>
-        <input type='submit' name='levantar_carta' value='Levantar carta 1'/>
-        <input type='submit' name='levantar_carta' value='Levantar carta 2'/>
-        <input type='submit' name='levantar_carta' value='Levantar carta 3'/>
-        <input type='submit' name='levantar_carta' value='Levantar carta 4'/>
-        <input type='submit' name='levantar_carta' value='Levantar carta 5'/>
-        <input type='submit' name='levantar_carta' value='Levantar carta 6'/>
+        <?php for ($i = 1; $i <= 6; $i++) { ?>
+            <input type='submit' name='levantar_carta' value='Levantar carta <?= $i ?>'/>
+        <?php } ?>
     </form>
     <form action='' method='post'>
         <label for='pareja1'>Pareja 1:</label>
@@ -48,14 +46,13 @@ $pares_seleccionados = array();
         <input type='number' id='pareja2' name='pareja2' min='1' max='6'/><br/>
         <input type='submit' name='comprobar' value='Comprobar'/>
     </form>
-<?php
-// Muestra las cartas boca abajo
-echo "<div class='cartas'>";
-for ($i = 0; $i < 6; $i++) {
-    echo "<img src='boca_abajo.jpg' alt='Carta " . ($i + 1) . "' class='carta' data-value='" . $i . "'/>";
-}
-echo "</div>";
+    <div class='cartas'>
+        <?php for ($i = 0; $i < 6; $i++) { ?>
+            <img src='boca_abajo.jpg' alt='Carta <?= $i + 1 ?>' class='carta' data-value='<?= $i ?>'/>
+        <?php } ?>
+    </div>
 
+<?php
 // Procesa la acción de levantar carta
 if (isset($_POST['levantar_carta'])) {
     $carta_seleccionada = explode(' ', $_POST['levantar_carta']);
@@ -63,14 +60,16 @@ if (isset($_POST['levantar_carta'])) {
     // Muestra la carta seleccionada
     echo "<div class='carta seleccionada' data-value='" . $carta_seleccionada . "'><img src='" . $combinacion[$carta_seleccionada - 1] . "' alt='Carta " . $carta_seleccionada . "'/></div>";
     // Incrementa el número de cartas levantadas
-    $cartas_levantadas++;
-}
-
-// Procesa la acción de comprobar
-if (isset($_POST['comprobar'])) {
-    // Comprueba si las parejas seleccionadas son correctas
-    $pareja1 = $_POST['pareja1'];
-    $pareja2 = $_POST['pareja2'];
-    // ...
+    $_SESSION['cartas_levantadas']++;
+    // Pone de nuevo todas las cartas boca abajo excepto la que se ha pulsado el botón
+    echo "<div class='cartas'>";
+    for ($i = 0; $i < 6; $i++) {
+        if ($i == $carta_seleccionada - 1) {
+            echo "<img src='" . $combinacion[$i] . "' alt='Carta " . ($i + 1) . "' class='carta' data-value='" . $i . "'/>";
+        } else {
+            echo "<img src='boca_abajo.jpg' alt='Carta " . ($i + 1) . "' class='carta' data-value='" . $i . "'/>";
+        }
+    }
+    echo "</div>";
 }
 ?>
