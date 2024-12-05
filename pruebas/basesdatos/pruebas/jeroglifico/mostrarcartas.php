@@ -53,12 +53,6 @@ if (!isset($_SESSION['cartas_levantadas'])) {
         }
     </style>
 
-    <div class='cartas'>
-        <?php for ($i = 0; $i < 6; $i++) { ?>
-            <img src='boca_abajo.jpg' alt='Carta <?= $i + 1 ?>' class='carta' data-value='<?= $i ?>'/>
-        <?php } ?>
-    </div>
-
 <?php
 // Procesa la acción de levantar carta
 if (isset($_POST['levantar_carta'])) {
