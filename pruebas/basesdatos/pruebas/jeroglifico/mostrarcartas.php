@@ -78,6 +78,7 @@ if (isset($_POST['levantar_carta'])) {
     }
     echo "</div>";
 } else {
+    $_SESSION['cartas_levantadas'] = 0;
     echo "<div class='cartas'>";
     for ($i = 0; $i < 6; $i++) {
         echo "<img src='boca_abajo.jpg' alt='Carta " . ($i + 1) . "' class='carta' data-value='" . $i . "'/>";
