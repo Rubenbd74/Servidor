@@ -14,16 +14,22 @@ $cartas = array(
     "copas_05.jpg"
 );
 
-$combinacion = array();
-$pares = array_rand($cartas, 3); // Genera 3 pares de cartas
+if (!isset($_SESSION['combinacion'])) {
+    $combinacion = array();
+    $pares = array_rand($cartas, 3); // Genera 3 pares de cartas
 
-for ($i = 0; $i < 3; $i++) {
-    $combinacion[] = $cartas[$pares[$i]];
-    $combinacion[] = $cartas[$pares[$i]];
+    for ($i = 0; $i < 3; $i++) {
+        $combinacion[] = $cartas[$pares[$i]];
+        $combinacion[] = $cartas[$pares[$i]];
+    }
+
+    // Mezcla la combinación para que las cartas estén en orden aleatorio
+    shuffle($combinacion);
+
+    $_SESSION['combinacion'] = $combinacion;
+} else {
+    $combinacion = $_SESSION['combinacion'];
 }
-
-// Mezcla la combinación para que las cartas estén en orden aleatorio
-shuffle($combinacion);
 
 // Inicializa las variables de juego
 if (!isset($_SESSION['cartas_levantadas'])) {
@@ -71,11 +77,10 @@ if (isset($_POST['levantar_carta'])) {
         }
     }
     echo "</div>";
-}
-else{
+} else {
     echo "<div class='cartas'>";
     for ($i = 0; $i < 6; $i++) {
-            echo "<img src='boca_abajo.jpg' alt='Carta " . ($i + 1) . "' class='carta' data-value='" . $i . "'/>";
+        echo "<img src='boca_abajo.jpg' alt='Carta " . ($i + 1) . "' class='carta' data-value='" . $i . "'/>";
     }
     echo "</div>";
 }
