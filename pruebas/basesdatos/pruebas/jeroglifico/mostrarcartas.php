@@ -56,7 +56,7 @@ if (!isset($_SESSION['cartas_levantadas'])) {
 
 <?php
 // Procesa la acción de levantar carta
-if (isset($_SESSION['levantar_carta'])) {
+if (isset($_POST['levantar_carta'])) {
     $carta_seleccionada = explode(' ', $_POST['levantar_carta']);
     $carta_seleccionada = end($carta_seleccionada);
     // Incrementa el número de cartas levantadas
@@ -69,6 +69,13 @@ if (isset($_SESSION['levantar_carta'])) {
         } else {
             echo "<img src='boca_abajo.jpg' alt='Carta " . ($i + 1) . "' class='carta' data-value='" . $i . "'/>";
         }
+    }
+    echo "</div>";
+}
+else{
+    echo "<div class='cartas'>";
+    for ($i = 0; $i < 6; $i++) {
+            echo "<img src='boca_abajo.jpg' alt='Carta " . ($i + 1) . "' class='carta' data-value='" . $i . "'/>";
     }
     echo "</div>";
 }
