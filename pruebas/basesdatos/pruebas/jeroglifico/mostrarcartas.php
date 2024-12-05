@@ -31,23 +31,23 @@ $pares_seleccionados = array();
 
 // Muestra la pantalla de juego
 ?><html>
-    <h1><?php  "Bienvenid@, " . $_SESSION['usuario'] ?></h1>;
-    <p><?php  "Cartas levantadas: $cartas_levantadas" ?></p>;
-    <form action='' method='post'>;
-        <input type='submit' name='levantar_carta' value='Levantar carta 1'/>;
-        <input type='submit' name='levantar_carta' value='Levantar carta 2'/>;
-        <input type='submit' name='levantar_carta' value='Levantar carta 3'/>;
-        <input type='submit' name='levantar_carta' value='Levantar carta 4'/>;
-        <input type='submit' name='levantar_carta' value='Levantar carta 5'/>;
-        <input type='submit' name='levantar_carta' value='Levantar carta 6'/>;
-    </form>";
-    <form action='' method='post'>;
-        <label for='pareja1'>Pareja 1:</label>;
-        <input type='number' id='pareja1' name='pareja1' min='1' max='6'/>;
-        <label for='pareja2'>Pareja 2:</label>;
-        <input type='number' id='pareja2' name='pareja2' min='1' max='6'/><br/>;
-        <input type='submit' name='comprobar' value='Comprobar'/>;
-    </form>;
+    <h1><?php  "Bienvenid@, " . $_SESSION['usuario'] ?></h1>
+    <p><?php  "Cartas levantadas: $cartas_levantadas" ?></p>
+    <form action='' method='post'>
+        <input type='submit' name='levantar_carta' value='Levantar carta 1'/>
+        <input type='submit' name='levantar_carta' value='Levantar carta 2'/>
+        <input type='submit' name='levantar_carta' value='Levantar carta 3'/>
+        <input type='submit' name='levantar_carta' value='Levantar carta 4'/>
+        <input type='submit' name='levantar_carta' value='Levantar carta 5'/>
+        <input type='submit' name='levantar_carta' value='Levantar carta 6'/>
+    </form>
+    <form action='' method='post'>
+        <label for='pareja1'>Pareja 1:</label>
+        <input type='number' id='pareja1' name='pareja1' min='1' max='6'/>
+        <label for='pareja2'>Pareja 2:</label>
+        <input type='number' id='pareja2' name='pareja2' min='1' max='6'/><br/>
+        <input type='submit' name='comprobar' value='Comprobar'/>
+    </form>
 <?php
 // Muestra las cartas boca abajo
 echo "<div class='cartas'>";
