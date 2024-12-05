@@ -48,7 +48,7 @@ if (!isset($_SESSION['cartas_levantadas'])) {
     </form>
     <style>
         .carta {
-            width: 50px; 
+            width: 260px; height: 400px; 
             display: inline-block;
         }
     </style>
