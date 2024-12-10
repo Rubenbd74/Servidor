@@ -146,7 +146,6 @@ function modificarVuelo() {
     alert(`El Vuelo con codigo ${codigo} fue modificado correctamente`);
 }
 
-//
 
 function Calcular() {
     const importe = parseInt(document.getElementById("importe").value);
@@ -173,12 +172,12 @@ document.addEventListener("DOMContentLoaded", () => {
     visualizarvuelos();
 });
 
-document.getElementById("formAñadirVuelo").addEventListener("submit", (e) => {
+document.getElementById("Vuelos").addEventListener("submit", (e) => {
     e.preventDefault();
 
     const codigo = parseInt(document.getElementById("codigo").value);
-    const numPlazas = document.getElementById("NumPlazas").value;
-    const importe = document.getElementById("Importe").value;
+    const numPlazas = document.getElementById("numPlazas").value;
+    const importe = document.getElementById("importe").value;
 
     añadirPedido(codigo, numPlazas, importe);
 
