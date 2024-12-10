@@ -41,7 +41,7 @@ function visualizarVuelos() {
 }
 
 function visualizarVuelosMuyRentables() {
-    const tbody = document.querySelector("#tablaVuelos tbody");
+    const tbody = document.querySelector("#tablaVuelosMuyRentables tbody");
     tbody.innerHTML = "";
 
     Vuelos.forEach(Vuelo => {
