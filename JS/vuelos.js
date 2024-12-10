@@ -67,7 +67,7 @@ function AñadirVuelo(codigo, numPlazas, importe) {
         return;
     }
 
-    if(nuevasPlazas<1 || nuevoImporte<1){
+    if(numPlazas<1 || importe<1){
         alert("Datos inválidos. Las Plazas y el Importe deben ser al menos 1.");
         return;
     }
