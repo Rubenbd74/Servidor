@@ -3,6 +3,34 @@
         <title>Vuelos</title>
     </head>
     <body>
+
+        <h2>Lista de Vuelos</h2>
+        <table id="tablaVuelos">
+            <thead>
+                <tr>
+                    <th>codigo</th>
+                    <th>Nº de Plazas</th>
+                    <th>Importe</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+
+        <h2>Lista de Vuelos</h2>
+        <table id="tablaVuelosMuyRentables">
+            <thead>
+                <tr>
+                    <th>codigo</th>
+                    <th>Ingreso Estimado</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+
         <h1>Vuelos</h1>
         <form id="Vuelos">
             <label for="codigo">Código:</label>
@@ -13,16 +41,17 @@
             <input type="int" id="importe" required>
             <button type="button" id="AñadirVueloBtn" onclick="AñadirVuelo()">Añadir</button>
             <button type="button" id="CalcularBtn" onclick="Calcular()">Calcular</button><br>
-            <button type="button" id="visualizarVuelosMuyRentables" onclick="visualizarVuelosMuyRentables()">Vuelos Muy Rentables</button><br><br>
+            <button type="button" id="visualizarVuelosMuyRentablesBtn" onclick="visualizarVuelosMuyRentables()">Vuelos Muy Rentables</button><br><br>
         </form>
+
         <h3>Modificar Pedido</h3>
         <form id="formFormularioModificar">
             <label for="modCodigo">Código:</label>
-            <input type="text" id="modCodigo" required><br>
+            <input type="text" id="modCodigo" required>
             <label for="modNumPlazas">Nº de plazas:</label>
-            <input type="number" id="modNumPlazas" required><br>
+            <input type="number" id="modNumPlazas" required>
             <label for="modImporte">Importe:</label>
-            <input type="int" id="modImporte" required><br>
+            <input type="int" id="modImporte" required>
 
             <button type="button" id="modificarVueloBtn" onclick="modificarVuelo()">Modificar</button>
         </form>
