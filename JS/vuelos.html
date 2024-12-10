@@ -4,17 +4,27 @@
     </head>
     <body>
         <h1>Vuelos</h1>
-        <form id="formAñadirVuelo">
+        <form id="Vuelos">
             <label for="codigo">Código:</label>
             <input type="text" id="CodVuelo" required>
             <label for="NumPlazas">Nº de plazas:</label>
             <input type="number" id="NumPlazas" required>
             <label for="Importe">Importe:</label>
             <input type="text" id="Importe" required>
-            <button type="submit">Añadir</button>
-            <button type="button" id="modificarVueloBtn" onclick="modificarVuelo()">Modificar</button>
+            <button type="button" id="modificarVueloBtn" onclick="AñadirVuelo()">Modificar</button>
             <button type="button" id="CalcularBtn" onclick="Calcular()">Calcular</button><br>
             <button type="button" id="visualizarVuelosMuyRentables" onclick="visualizarVuelosMuyRentables()">Vuelos Muy Rentables</button><br><br>
+        </form>
+        <h3>Modificar Pedido</h3>
+        <form id="formFormularioModificar">
+            <label for="modCodigo">Código:</label>
+            <input type="text" id="modCodigo" required><br>
+            <label for="modNumPlazas">Nº de plazas:</label>
+            <input type="number" id="modNumPlazas" required><br>
+            <label for="modImporte">Importe:</label>
+            <input type="int" id="modImporte" required><br>
+
+            <button type="button" id="modificarVueloBtn" onclick="modificarVuelo()">Modificar</button>
         </form>
         <script src="vuelos.js"></script>
     </body>
