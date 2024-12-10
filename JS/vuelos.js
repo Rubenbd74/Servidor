@@ -58,7 +58,11 @@ function visualizarVuelosMuyRentables() {
 
 function AñadirVuelo(codigo, numPlazas, importe) {
 
-    if (!codigo || !numPlazas /*|| !importe */ ) {
+    codigo = document.getElementById("codigo").value;
+    numPlazas = document.getElementById("numPlazas").value;
+    importe = document.getElementById("importe").value;
+
+    if (!codigo /*|| !numPlazas*/ || !importe  ) {
         alert("Datos inválidos. Por favor, complete todos los campos.");
         return;
     }
@@ -169,7 +173,7 @@ function calcularIngresoEstimado(importe, numPlazas) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    visualizarvuelos();
+    visualizarVuelos();
 });
 
 document.getElementById("Vuelos").addEventListener("submit", (e) => {
