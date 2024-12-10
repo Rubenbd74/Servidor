@@ -56,7 +56,7 @@ function visualizarVuelosMuyRentables() {
     });
 }
 
-function añadirVuelo(codigo, numPlazas, importe) {
+function AñadirVuelo(codigo, numPlazas, importe) {
 
     if (!codigo || !numPlazas || !importe ) {
         alert("Datos inválidos. Por favor, complete todos los campos.");
