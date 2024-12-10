@@ -87,7 +87,7 @@ function AñadirVuelo(codigo, numPlazas, importe) {
 }
 
 function modificarVuelo() {
-    const nuevoCodigo = parseInt(document.getElementById("modCodigo").value);
+    const nuevoCodigo = document.getElementById("modCodigo").value;
     const nuevasPlazas = document.getElementById("modNumPlazas").value;
     const nuevoImporte = document.getElementById("modImporte").value;
 
@@ -101,13 +101,13 @@ function modificarVuelo() {
         return;
     }
 
-    const Vuelo = Vuelos.find(p => p.codigo === codigo);
+    const Vuelo = Vuelos.find(p => p.codigo === nuevoCodigo);
     if (!Vuelo) {
         alert("No hay ningún Vuelo con ese codigo");
         return;
     }
 
-    const Importe = Vuelos.find(p => p.importe === importe);
+    const Importe = Vuelos.find(p => p.importe === nuevoImporte);
     if( Importe<20000 && nuevoImporte>=20000) {
         alert("El vuelo es ahora muy rentable");
 
@@ -147,7 +147,7 @@ function modificarVuelo() {
 
     guardarVuelo();
     visualizarVuelos();
-    alert(`El Vuelo con codigo ${codigo} fue modificado correctamente`);
+    alert(`El Vuelo con codigo ${Vuelo.codigo} fue modificado correctamente`);
 }
 
 
