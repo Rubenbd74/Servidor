@@ -154,13 +154,13 @@ function Calcular() {
     const ingresoEstimado = calcularIngresoEstimado(importe, numPlazas);
 
     if(importe<10000) {
-        alert("El vuelo es poco rentable</br>El ingreso estimado es: " + ingresoEstimado);
+        alert("El vuelo es poco rentable, el ingreso estimado es: " + ingresoEstimado);
     }
     if(importe>=10000 && importe<20000) {
-        alert("El vuelo es rentable</br>El ingreso estimado es: " + ingresoEstimado);
+        alert("El vuelo es rentable, el ingreso estimado es: " + ingresoEstimado);
     }
     if(importe>=20000) {
-        alert("El vuelo es muy rentable</br>El ingreso estimado es: " + ingresoEstimado);
+        alert("El vuelo es muy rentable, el ingreso estimado es: " + ingresoEstimado);
     }
 }
 
