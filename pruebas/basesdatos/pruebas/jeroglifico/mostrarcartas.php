@@ -61,13 +61,13 @@ if (!isset($_SESSION['cartas_levantadas'])) {
     </style>
 
 <?php
-//procesa la acción de levantar carta
+//levantar carta
 if (isset($_POST['levantar_carta'])) {
     $carta_seleccionada = explode(' ', $_POST['levantar_carta']);
     $carta_seleccionada = end($carta_seleccionada);
-    //incrementa el número de cartas levantadas
+
     $_SESSION['cartas_levantadas']++;
-    //pone de nuevo todas las cartas boca abajo excepto la que se ha pulsado el botón
+    //pone de nuevo todas las cartas boca abajo menos la levantada
     echo "<div class='cartas'>";
     for ($i = 0; $i < 6; $i++) {
         if ($i == $carta_seleccionada - 1) {
@@ -77,7 +77,8 @@ if (isset($_POST['levantar_carta'])) {
         }
     }
     echo "</div>";
-} else {
+} 
+else {
     $_SESSION['cartas_levantadas'] = 0;
     echo "<div class='cartas'>";
     for ($i = 0; $i < 6; $i++) {
