@@ -85,4 +85,9 @@ if (isset($_POST['levantar_carta'])) {
     }
     echo "</div>";
 }
+
+//para comprobar, comparamos las dos posiciones del vector seleccionadas, si son identicos es correcto
+
+
+
 ?>
