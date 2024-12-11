@@ -1,5 +1,6 @@
 <?
 require_once 'conexion.php';
+require_once 'mostrar_cartas.php';
 session_start();
 if(isset($_POST['comprobar'])) {
     $pareja1 = $_POST['pareja1'] - 1; // Restamos 1 para que coincida con el índice del array
