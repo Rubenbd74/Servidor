@@ -87,7 +87,7 @@ else {
     echo "</div>";
 }
 
-//para comprobar, comparamos las dos posiciones del vector seleccionadas, si son identicos es correcto
+//para comprobar, comparamos las dos posiciones del vector seleccionadas, si son identicos es correcto Sergioastur
 
 
 
