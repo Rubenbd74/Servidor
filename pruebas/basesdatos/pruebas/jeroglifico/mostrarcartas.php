@@ -16,14 +16,14 @@ $cartas = array(
 
 if (!isset($_SESSION['combinacion'])) {
     $combinacion = array();
-    $pares = array_rand($cartas, 3); // Genera 3 pares de cartas
-
+    $pares = array_rand($cartas, 3); 
+    //genera 3 pares de cartas
     for ($i = 0; $i < 3; $i++) {
         $combinacion[] = $cartas[$pares[$i]];
         $combinacion[] = $cartas[$pares[$i]];
     }
 
-    // Mezcla la combinación para que las cartas estén en orden aleatorio
+    //mezcla la combinación para que las cartas estén en orden aleatorio
     shuffle($combinacion);
 
     $_SESSION['combinacion'] = $combinacion;
@@ -31,12 +31,12 @@ if (!isset($_SESSION['combinacion'])) {
     $combinacion = $_SESSION['combinacion'];
 }
 
-// Inicializa las variables de juego
+//inicializa las variables de juego
 if (!isset($_SESSION['cartas_levantadas'])) {
     $_SESSION['cartas_levantadas'] = 0;
 }
 
-// Muestra la pantalla de juego
+//muestra la pantalla de juego
 ?>
     <h1><?= "Bienvenid@, " . $_SESSION['login'] ?></h1>
     <p><?=  "Cartas levantadas: " . $_SESSION['cartas_levantadas'] ?></p>
@@ -61,13 +61,13 @@ if (!isset($_SESSION['cartas_levantadas'])) {
     </style>
 
 <?php
-// Procesa la acción de levantar carta
+//procesa la acción de levantar carta
 if (isset($_POST['levantar_carta'])) {
     $carta_seleccionada = explode(' ', $_POST['levantar_carta']);
     $carta_seleccionada = end($carta_seleccionada);
-    // Incrementa el número de cartas levantadas
+    //incrementa el número de cartas levantadas
     $_SESSION['cartas_levantadas']++;
-    // Pone de nuevo todas las cartas boca abajo excepto la que se ha pulsado el botón
+    //pone de nuevo todas las cartas boca abajo excepto la que se ha pulsado el botón
     echo "<div class='cartas'>";
     for ($i = 0; $i < 6; $i++) {
         if ($i == $carta_seleccionada - 1) {
