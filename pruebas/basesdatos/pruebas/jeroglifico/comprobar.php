@@ -1,3 +1,6 @@
+<?
+session_start();
+
 if(isset($_POST['comprobar'])) {
     $pareja1 = $_POST['pareja1'] - 1; // Restamos 1 para que coincida con el índice del array
     $pareja2 = $_POST['pareja2'] - 1;
