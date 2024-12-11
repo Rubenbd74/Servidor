@@ -76,7 +76,8 @@ INSERT INTO `usuarios` (`Codigo`, `Nombre`, `Clave`, `Rol`) VALUES
 --
 ALTER TABLE `contactos`
   ADD PRIMARY KEY (`codcontacto`),
-  ADD KEY `codusuario` (`codusuario`);
+  ADD KEY `codusuario` (`codusuario`),
+  MODIFY `codcontacto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Indices de la tabla `usuarios`
