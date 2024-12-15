@@ -6,112 +6,179 @@
     <title>Gestión de Pedidos</title>
     <style>
         body {
-
-            margin: 20px;
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #5a4736;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        main {
             padding: 20px;
         }
+        h1, h2, h3 {
+            font-family: 'Times New Roman', serif;
+        }
+        h2 {
+            border-bottom: 2px solid #5a4736;
+            padding-bottom: 5px;
+        }
         input, button {
+            display: block;
+            width: 100%;
             margin: 10px 0;
-            padding: 8px;
+            padding: 10px;
             font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #5a4736;
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #b03a07;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px; 
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         th, td {
-            padding: 10px;
-            border: 1px solid #ccc;
+            padding: 15px;
+            border: 1px solid #ddd;
             text-align: left;
         }
         th {
-            background-color: #4a51ad;
+            background-color: #5a4736;
             color: white;
         }
         .formulario-container {
             display: flex;
-            justify-content: space-between;
-            gap: 20px;
+            flex-direction: column;
+            gap: 10px;
             margin-top: 20px;
         }
         form {
-            flex: 1;
-            background-color: #ada9a9;
+            display: none;
+            background-color: white;
             border: 1px solid #ccc;
-            padding: 15px;
+            padding: 20px;
             border-radius: 5px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+        .form-header {
+            cursor: pointer;
+            background-color: #5a4736;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .form-header:hover {
+            background-color: #b03a07;
+        }
+        .toggle-button {
+            cursor: pointer;
+            color: white;
+            background-color: #5a4736;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .toggle-button:hover {
+            background-color: #b03a07;
         }
     </style>
+    <script>
+        function toggleVisibility(elementId) {
+            const element = document.getElementById(elementId);
+            element.style.display = element.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 </head>
 <body>
 
-<h1>Gestión de Pedidos</h1>
+<header>
+    <h1>Gestión de Pedidos</h1>
+</header>
 
-<!-- Tabla para mostrar los pedidos -->
-<h2>Lista de Pedidos</h2>
-<table id="tablaPedidos">
-    <thead>
-        <tr>
-            <th>Número Pedido</th>
-            <th>Cliente</th>
-            <th>Fecha</th>
-            <th>Procesado</th>
-            <th>Servido</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!-- Los pedidos se insertarán aquí dinámicamente -->
-    </tbody>
-</table>
+<main>
+    
+    <button class="toggle-button" onclick="toggleVisibility('tablaPedidosContainer')">Mostrar Tabla</button>
+    <div id="tablaPedidosContainer" style="display: block;">
+        <h2>Lista de Pedidos</h2>
+        <table id="tablaPedidos">
+            <thead>
+                <tr>
+                    <th>Número Pedido</th>
+                    <th>Cliente</th>
+                    <th>Fecha</th>
+                    <th>Procesado</th>
+                    <th>Servido</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
 
-<!-- Contenedor de formularios -->
-<div class="formulario-container">
+    <div class="formulario-container">
+        <div class="form-header" onclick="toggleVisibility('formAñadirPedido')">Añadir Nuevo Pedido</div>
+        <form id="formAñadirPedido">
+            <label for="numPedido">Número Pedido:</label>
+            <input type="number" id="numPedido" required>
+            <label for="cliente">Cliente:</label>
+            <input type="text" id="cliente" required>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" required>
+            <label for="procesado">¿Procesado?</label>
+            <input type="checkbox" id="procesado">
+            <label for="servido">¿Servido?</label>
+            <input type="checkbox" id="servido">
+            <button type="submit">Añadir Pedido</button>
+        </form>
 
-    <!-- Formulario para añadir un nuevo pedido -->
-    <form id="formAñadirPedido">
-        <h3>Añadir Nuevo Pedido</h3>
-        <label for="numPedido">Número Pedido:</label>
-        <input type="number" id="numPedido" required><br>
-        <label for="cliente">Cliente:</label>
-        <input type="text" id="cliente" required><br>
-        <label for="fecha">Fecha:</label>
-        <input type="date" id="fecha" required><br>
-        <label for="procesado">¿Procesado?</label>
-        <input type="checkbox" id="procesado"><br>
-        <label for="servido">¿Servido?</label>
-        <input type="checkbox" id="servido"><br>
-        <button type="submit">Añadir Pedido</button>
-    </form>
+        <div class="form-header" onclick="toggleVisibility('formFormularioModificar')">Modificar Pedido</div>
+        <form id="formFormularioModificar">
+            <label for="modNumPedido">Número Pedido:</label>
+            <input type="number" id="modNumPedido" required>
+            <label for="modCliente">Cliente:</label>
+            <input type="text" id="modCliente" required>
+            <label for="modFecha">Fecha:</label>
+            <input type="date" id="modFecha" required>
+            <label for="modProcesado">¿Procesado?</label>
+            <input type="checkbox" id="modProcesado">
+            <label for="modServido">¿Servido?</label>
+            <input type="checkbox" id="modServido">
+            <button type="button" id="modificarPedidoBtn" onclick="modificarPedido()">Modificar Pedido</button>
+        </form>
 
-    <!-- Formulario para modificar un pedido -->
-    <form id="formFormularioModificar">
-        <h3>Modificar Pedido</h3>
-        <label for="modNumPedido">Número Pedido:</label>
-        <input type="number" id="modNumPedido" required><br>
-        <label for="modCliente">Cliente:</label>
-        <input type="text" id="modCliente" required><br>
-        <label for="modFecha">Fecha:</label>
-        <input type="date" id="modFecha" required><br>
-        <label for="modProcesado">¿Procesado?</label>
-        <input type="checkbox" id="modProcesado"><br>
-        <label for="modServido">¿Servido?</label>
-        <input type="checkbox" id="modServido"><br>
-        <button type="button" id="modificarPedidoBtn" onclick="modificarPedido()">Modificar Pedido</button>
-    </form>
+        <div class="form-header" onclick="toggleVisibility('formEliminarPedido')">Eliminar Pedido</div>
+        <form id="formEliminarPedido">
+            <label for="numPedidoEliminar">Número de Pedido a Eliminar:</label>
+            <input type="number" id="numPedidoEliminar" required>
+            <button type="button" id="eliminarPedidoBtn" onclick="eliminarPedido()">Eliminar Pedido</button>
+        </form>
+    </div>
+</main>
 
-    <!-- Formulario para eliminar un pedido -->
-    <form id="formEliminarPedido">
-        <h3>Eliminar Pedido</h3>
-        <label for="numPedidoEliminar">Número de Pedido a Eliminar:</label>
-        <input type="number" id="numPedidoEliminar" required><br>
-        <button type="button" id="eliminarPedidoBtn" onclick="eliminarPedido()">Eliminar Pedido</button>
-    </form>
-
-</div>
-
-<!-- Vinculamos el archivo JavaScript -->
 <script src="Pedidos.js"></script>
 
 </body>

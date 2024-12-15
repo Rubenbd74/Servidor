@@ -1,4 +1,3 @@
-// Clase Pedido
 class Pedido {
     constructor(numPed, cliente, fecha, procesado, servido) {
         this.numPed = numPed;
@@ -8,23 +7,19 @@ class Pedido {
         this.servido = servido;
     }
 }
-
-//!En esta funcion o se recuperán los datos del array o se reinicializan
 let pedidos = JSON.parse(localStorage.getItem("pedidos"));
 if (!Array.isArray(pedidos)) {
     pedidos = [];
-    localStorage.setItem("pedidos", JSON.stringify(pedidos));  // Reiniciamos en caso de error
+    localStorage.setItem("pedidos", JSON.stringify(pedidos));
 }
 
-//!Sue guardan en localStorage los datos
 function guardarPedido() {
     localStorage.setItem("pedidos", JSON.stringify(pedidos));
 }
 
-//!En esta funcion visualizo los pedidos
 function visualizarPedidos() {
     const tbody = document.querySelector("#tablaPedidos tbody");
-    tbody.innerHTML = ""; // Limpiar la tabla antes de agregar nuevos pedidos
+    tbody.innerHTML = "";
 
     pedidos.forEach(pedido => {
         const tr = document.createElement("tr");
@@ -39,7 +34,6 @@ function visualizarPedidos() {
     });
 }
 
-//!En esta función se añaden nuevos pedidos
 function añadirPedido(numPed, cliente, fecha, procesado, servido) {
     if (!Number.isInteger(numPed)) {
         alert("El número de pedido debe ser un entero.");
@@ -58,7 +52,6 @@ function añadirPedido(numPed, cliente, fecha, procesado, servido) {
     visualizarPedidos();
 }
 
-//!En esta funcion se eliminan los pedidos en base al numero introducido
 function eliminarPedido() {
     const numPed = parseInt(document.getElementById("numPedidoEliminar").value, 10);
     
@@ -77,12 +70,9 @@ function eliminarPedido() {
     guardarPedido();
     visualizarPedidos();
     alert(`Pedido con número ${numPed} eliminado correctamente`);
-
-    //!En esta línea de codigo limpiamos para no llevar a problemas
     document.getElementById("numPedidoEliminar").value = "";
 }
 
-//!Funcion en la que modifico el pedido
 function modificarPedido() {
     const numPed = parseInt(document.getElementById("modNumPedido").value, 10);
     const nuevoCliente = document.getElementById("modCliente").value;
@@ -101,7 +91,6 @@ function modificarPedido() {
         return;
     }
 
-
     pedido.cliente = nuevoCliente;
     pedido.fecha = nuevaFecha;
     pedido.procesado = nuevoProcesado;
@@ -112,7 +101,6 @@ function modificarPedido() {
     alert(`El pedido con número ${numPed} fue modificado correctamente`);
 }
 
-//!Con esta funcion lo que hago es mostrar el formulario donde se modifican los pedidos
 function formularioModificar(numPed) {
     const pedido = pedidos.find(p => p.numPed === numPed);
     if (!pedido) {
@@ -125,18 +113,14 @@ function formularioModificar(numPed) {
     document.getElementById("modFecha").value = pedido.fecha;
     document.getElementById("modProcesado").checked = pedido.procesado;
     document.getElementById("modServido").checked = pedido.servido;
-
-    // Mostrar los botones de modificar y eliminar debajo del formulario
     document.getElementById("modificarPedidoBtn").style.display = 'inline-block';
     document.getElementById("eliminarPedidoBtn").style.display = 'inline-block';
 }
 
-//!En este evento cargamos los datos al iniciar la página
 document.addEventListener("DOMContentLoaded", () => {
     visualizarPedidos();
 });
 
-//!Y en este evento muestro el formulario para ñadir un nuevo pedido
 document.getElementById("formAñadirPedido").addEventListener("submit", (e) => {
     e.preventDefault();
 

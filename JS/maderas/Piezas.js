@@ -8,21 +8,19 @@ class Piezas {
         this.ambasCaras = ambasCaras;
         this.cortada = cortada;
 
-        // Calcular superficie y volumen automáticamente
         this.superficie = this.calcularSuperficie();
         this.volumen = this.calcularVolumen();
     }
 
     calcularSuperficie() {
-        return this.largo * this.ancho; // Superficie de ambas caras
+        return this.largo * this.ancho; 
     }
 
     calcularVolumen() {
-        return this.largo * this.ancho * this.grosor; // Volumen
+        return this.largo * this.ancho * this.grosor; 
     }
 }
 
-// Cargar piezas desde localStorage y convertirlas en instancias de Piezas
 let piezas = JSON.parse(localStorage.getItem("piezas")) || [];
 piezas = piezas.map(piezaData => Object.assign(new Piezas(), piezaData));
 
@@ -136,7 +134,7 @@ document.getElementById("formularioAñadir").addEventListener("submit", (e) => {
 
     añadirPieza(numPieza, largo, ancho, grosor, color, ambasCaras, cortada);
 
-    e.target.reset(); // Limpiar el formulario
+    e.target.reset(); 
 });
 
 document.getElementById("formularioModificacion").addEventListener("submit", (e) => {
