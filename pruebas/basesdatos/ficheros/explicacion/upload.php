@@ -13,3 +13,12 @@
         echo "El fichero es un archivo de texto, .txt";
         $uploadOk = 1;
     }
+
+    if ($uploadOk == 1) {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            echo "El fichero " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " ha sido subido correctamente.";
+        } 
+        else {
+            echo "Error al subir el fichero.";
+        }
+    }
