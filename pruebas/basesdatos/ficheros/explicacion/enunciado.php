@@ -27,7 +27,8 @@ Otras cosas a destacar:
 archivo de control de selección, con un "Browse" botón situado junto al control de 
 entrada
 El formulario anterior envía datos a un archivo llamado "upload.php" , lo que vamos a 
-crear otra.
+crear otra.______________
+
 El "upload.php" archivo contiene el código para cargar un archivo:
 <?php
 $target_dir = "uploads/";
@@ -53,7 +54,8 @@ $ ImageFileType tiene la extensión de archivo del archivo
 A continuación, compruebe si el archivo de imagen es una imagen real o una imagen 
 falsa
 Nota: tendrá que crear un nuevo directorio llamado "uploads" en el directorio 
-donde "upload.php" reside el archivo. Los archivos subidos se guardarán allí.
+donde "upload.php" reside el archivo. Los archivos subidos se guardarán allí.__________________
+
 Compruebe si el archivo ya existe
 Ahora podemos añadir algunas restricciones.
 En primer lugar, vamos a comprobar si el archivo ya existe en el "uploads" carpeta. Si lo 
@@ -64,7 +66,7 @@ if (file_exists($target_file)) {
  echo "El fichero existe.";
  $uploadOk = 0;
 }
-/*
+/*_______________
 Límite de tamaño del archivo
 El campo de entrada de archivo en el formulario HTML anterior se 
 denomina "fileToUpload" .
@@ -76,7 +78,7 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
  echo "El fichero es demasiado grande.";
  $uploadOk = 0;
 }
-/*
+/*________________
 Tipo de límite de archivos
 El código siguiente sólo permite a los usuarios subir JPG, JPEG, PNG y GIF. Todos los 
 demás tipos de archivos da un mensaje de error antes de $ uploadOk a 0:*/
