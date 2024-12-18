@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Pedidos</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #5a4736;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        main {
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            font-family: 'Times New Roman', serif;
+        }
+        h2 {
+            border-bottom: 2px solid #5a4736;
+            padding-bottom: 5px;
+        }
+        input, button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #5a4736;
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #b03a07;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #5a4736;
+            color: white;
+        }
+        .formulario-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        form {
+            display: none;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+        .form-header {
+            cursor: pointer;
+            background-color: #5a4736;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .form-header:hover {
+            background-color: #b03a07;
+        }
+        .toggle-button {
+            cursor: pointer;
+            color: white;
+            background-color: #5a4736;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .toggle-button:hover {
+            background-color: #b03a07;
+        }
+    </style>
+    <script>
+        function toggleVisibility(elementId) {
+            const element = document.getElementById(elementId);
+            element.style.display = element.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Gestión de Pedidos</h1>
+</header>
+
+<main>
+    
+    <button class="toggle-button" onclick="toggleVisibility('tablaPedidosContainer')">Mostrar Tabla</button>
+    <div id="tablaPedidosContainer" style="display: block;">
+        <h2>Lista de Pedidos</h2>
+        <table id="tablaPedidos">
+            <thead>
+                <tr>
+                    <th>Número Pedido</th>
+                    <th>Cliente</th>
+                    <th>Fecha</th>
+                    <th>Procesado</th>
+                    <th>Servido</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="formulario-container">
+        <div class="form-header" onclick="toggleVisibility('formAñadirPedido')">Añadir Nuevo Pedido</div>
+        <form id="formAñadirPedido">
+            <label for="numPedido">Número Pedido:</label>
+            <input type="number" id="numPedido" required>
+            <label for="cliente">Cliente:</label>
+            <input type="text" id="cliente" required>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" required>
+            <label for="procesado">¿Procesado?</label>
+            <input type="checkbox" id="procesado">
+            <label for="servido">¿Servido?</label>
+            <input type="checkbox" id="servido">
+            <button type="submit">Añadir Pedido</button>
+        </form>
+
+        <div class="form-header" onclick="toggleVisibility('formFormularioModificar')">Modificar Pedido</div>
+        <form id="formFormularioModificar">
+            <label for="modNumPedido">Número Pedido:</label>
+            <input type="number" id="modNumPedido" required>
+            <label for="modCliente">Cliente:</label>
+            <input type="text" id="modCliente" required>
+            <label for="modFecha">Fecha:</label>
+            <input type="date" id="modFecha" required>
+            <label for="modProcesado">¿Procesado?</label>
+            <input type="checkbox" id="modProcesado">
+            <label for="modServido">¿Servido?</label>
+            <input type="checkbox" id="modServido">
+            <button type="button" id="modificarPedidoBtn" onclick="modificarPedido()">Modificar Pedido</button>
+        </form>
+
+        <div class="form-header" onclick="toggleVisibility('formEliminarPedido')">Eliminar Pedido</div>
+        <form id="formEliminarPedido">
+            <label for="numPedidoEliminar">Número de Pedido a Eliminar:</label>
+            <input type="number" id="numPedidoEliminar" required>
+            <button type="button" id="eliminarPedidoBtn" onclick="eliminarPedido()">Eliminar Pedido</button>
+        </form>
+    </div>
+</main>
+
+<script src="Pedidos.js"></script>
+
+</body>
+</html>
