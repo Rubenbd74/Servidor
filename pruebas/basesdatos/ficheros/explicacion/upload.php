@@ -1,4 +1,4 @@
-<!-- El "upload.php" archivo contiene el código para cargar un archivo:
+<!-- El "upload.php" archivo contiene el código para cargar un archivo:-->
 
 <?php
     $target_dir = "uploads/";
