@@ -1,8 +1,6 @@
 <?php
+ session_start();
 $imagenes = array();
-for ($i = 1; $i <= 10; $i++) {
-    $imagenes[] = "adornos/" . $_FILES["fileToUpload$i"]["name"];
-}
 
 ?>
 <style>
@@ -44,22 +42,22 @@ for ($i = 1; $i <= 10; $i++) {
 </style>
 <div class="arbol">
     <div class="fila-1">
-        <img src="<?php echo $imagenes[0]; ?>" alt="Imagen 1">
+        <img src="<?php echo $_SESSION['adornos'][1]; ?>" alt="Imagen 1">
     </div>
     <div class="fila-2">
-        <img src="<?php echo $imagenes[1]; ?>" alt="Imagen 2">
-        <img src="<?php echo $imagenes[2]; ?>" alt="Imagen 3">
+        <img src="<?php echo $_SESSION['adornos'][2]; ?>" alt="Imagen 2">
+        <img src="<?php echo $_SESSION['adornos'][3]; ?>" alt="Imagen 3">
     </div>
     <div class="fila-3">
-        <img src="<?php echo $imagenes[3]; ?>" alt="Imagen 4">
-        <img src="<?php echo $imagenes[4]; ?>" alt="Imagen 5">
-        <img src="<?php echo $imagenes[5]; ?>" alt="Imagen 6">
+        <img src="<?php echo $_SESSION['adornos'][4]; ?>" alt="Imagen 4">
+        <img src="<?php echo $_SESSION['adornos'][5]; ?>" alt="Imagen 5">
+        <img src="<?php echo $_SESSION['adornos'][6]; ?>" alt="Imagen 6">
     </div>
     <div class="fila-4">
-        <img src="<?php echo $imagenes[6]; ?>" alt="Imagen 7">
-        <img src="<?php echo $imagenes[7]; ?>" alt="Imagen 8">
-        <img src="<?php echo $imagenes[8]; ?>" alt="Imagen 9">
-        <img src="<?php echo $imagenes[9]; ?>" alt="Imagen 10">
+        <img src="<?php echo $_SESSION['adornos'][7]; ?>" alt="Imagen 7">
+        <img src="<?php echo $_SESSION['adornos'][8]; ?>" alt="Imagen 8">
+        <img src="<?php echo $_SESSION['adornos'][9]; ?>" alt="Imagen 9">
+        <img src="<?php echo $_SESSION['adornos'][10]; ?>" alt="Imagen 10">
     </div>
 </div>
 
