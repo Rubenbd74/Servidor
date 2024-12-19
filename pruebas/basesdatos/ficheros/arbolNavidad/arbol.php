@@ -60,4 +60,5 @@ $imagenes = array();
         <img src="<?php echo $_SESSION['adornos'][10]; ?>" alt="Imagen 10">
     </div>
 </div>
+<a href="formulario.php" style="text-align: left;">Volver al formulario</a>
 
