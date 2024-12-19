@@ -16,8 +16,10 @@
     if ($uploadOk == 1) {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             echo "El fichero " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " ha sido subido correctamente.";
+            ?><a href="arbol.php" style="text-align: left;">Mostrar el arbol</a><?php
         } 
         else {
             echo "Error al subir el fichero.";
+            ?><a href="formulario.php" style="text-align: left;">Volver al formulario</a><?php
         }
     }
