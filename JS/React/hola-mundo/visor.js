@@ -37,7 +37,7 @@ const Visor = (props) => {
     setTimeout(() => {mostrarImagen();}, 0);
 
     return (
-        <div className="Visor">
+        <div className="visor">
             <img id='visorImagenes' className ='imagen' />
             <br/>
             <div className="botones">
