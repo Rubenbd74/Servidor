@@ -16,9 +16,9 @@ Route::get('pagina2/{id}', function($id)   //public/pagina2/1
 return 'Usuario '.$id;
 });
 
-Route::get('pagina3/{name?}', function($name = null)    //public/pagina3
+Route::get('pagina3/{name?}', function($name = null)    //public/pagina3  //el interrogante hace que sea opcional
 {
-return $name;
+return 'Hola' +$name;
 });
 // También podemos poner algún valor por defecto...
 Route::get('pagina3/{name?}', function($name = 'Javi')
