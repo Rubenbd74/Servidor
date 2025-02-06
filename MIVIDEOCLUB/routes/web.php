@@ -25,3 +25,24 @@ Route::get('pagina3/{name?}', function($name = 'Rubén')  // También podemos po
 {
 return 'Hola '. $name;
 });
+
+//Podemos usar expresiones regulares para validar los parámetros
+
+Route::get('pagina4/{name}', function($name)
+{
+//
+})
+->where('name', '[A-Za-z]+');
+
+Route::get('pagina4/{id}', function($id)
+{
+//
+})
+->where('id', '[0-9]+');
+
+// Si hay varios parámetros podemos validarlos usando un array:
+Route::get('pagina4/{id}/{name}', function($id, $name)
+{
+//
+})
+->where(array('id' => '[0-9]+', 'name' => '[A-Za-z]+'));
