@@ -18,10 +18,10 @@ return 'Usuario '.$id;
 
 Route::get('pagina3/{name?}', function($name = null)    //public/pagina3/elnombre  //el interrogante hace que sea opcional
 {
-return 'Hola' +$name;
+return 'Hola'. $name;
 });
 
 Route::get('pagina3/{name?}', function($name = 'Rubén')  // También podemos poner algún valor por defecto... public/pagina3/
 {
-return 'Hola' +$name;
+return 'Hola'. $name;
 });
