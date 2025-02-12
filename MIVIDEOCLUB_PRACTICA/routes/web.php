@@ -13,7 +13,7 @@ Route::get('/login', function () {
 });
 Route::get('/logout', function () {
     //return 'Logout del usuario';
-    return view('home');
+    return view('logout');
 });
 Route::get('/catalog', function () {
     //return 'Listado de peliculas';
