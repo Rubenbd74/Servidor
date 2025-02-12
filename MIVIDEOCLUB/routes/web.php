@@ -48,27 +48,33 @@ Route::get('pagina4/{id}/{name}', function($id, $name)
 ->where(array('id' => '[0-9]+', 'name' => '[A-Za-z]+'));*/
 
 Route::get('/', function () {
-    return 'Pantalla principal';
+    //return 'Pantalla principal';
+    return view('home');
 });
 
 Route::get('/login', function () {
-    return 'Login usuario';
+    //return 'Login usuario';
+    return view('login');
 });
 Route::get('/logout', function () {
-    return 'Logout del usuario';
+    //return 'Logout del usuario';
+    return view('home');
 });
 Route::get('/catalog', function () {
-    return 'Listado de peliculas';
+    //return 'Listado de peliculas';
+    return view('catalog.index');
 });
 
 Route::get('/catalog/show/{id}', function ($id) {
-    return 'Vista detalle película '. $id;
+    //return 'Vista detalle película '. $id;
+    return view('catalog.show', array('id'=>$id));
 });
 
 Route::get('/catalog/create', function () {
-    return 'Añadir película';
+    //return 'Añadir película';
+    return view('catalog.create');
 });
 
 Route::get('catalog/edit/{id}', function ($id) {
-    return 'Modificar pelicula '. $id;
-});
+    return 'Modificar pelicula '. $id;});
+    return view('catalog.edit', array('id'=>$id));
