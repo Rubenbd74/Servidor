@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {   //public/
+/*Route::get('/', function () {   //public/
     echo "Hola Mundo";
     //return view('welcome'); //Nos muestra la vista MIVIDEOCLUB/resources/views/welcome.blade.php
 });
@@ -45,4 +45,30 @@ Route::get('pagina4/{id}/{name}', function($id, $name)
 {
 //
 })
-->where(array('id' => '[0-9]+', 'name' => '[A-Za-z]+'));
+->where(array('id' => '[0-9]+', 'name' => '[A-Za-z]+'));*/
+
+Route::get('/', function () {
+    return 'Pantalla principal';
+});
+
+Route::get('/login', function () {
+    return 'Login usuario';
+});
+Route::get('/logout', function () {
+    return 'Logout del usuario';
+});
+Route::get('/catalog', function () {
+    return 'Listado de peliculas';
+});
+
+Route::get('/catalog/show/{id}', function ($id) {
+    return 'Vista detalle película '. $id;
+});
+
+Route::get('/catalog/create', function () {
+    return 'Añadir película';
+});
+
+Route::get('catalog/edit/{id}', function ($id) {
+    return 'Modificar pelicula '. $id;
+});
