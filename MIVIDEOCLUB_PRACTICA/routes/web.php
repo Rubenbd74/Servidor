@@ -8,7 +8,7 @@ Route::get('/', function () {
 
 Route::get('/login', function () {
     //return 'Login usuario';
-    return view('login');
+    return view('auth.login');
 });
 Route::get('/logout', function () {
     return 'Logout del usuario';
