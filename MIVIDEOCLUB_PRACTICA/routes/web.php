@@ -11,8 +11,7 @@ Route::get('/login', function () {
     return view('login');
 });
 Route::get('/logout', function () {
-    //return 'Logout del usuario';
-    return view('logout');
+    return 'Logout del usuario';
 });
 Route::get('/catalog', function () {
     //return 'Listado de peliculas';
