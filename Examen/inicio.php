@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'login.php';
+require_once 'logi.php';
 if (!isset($_SESSION['login'])) {
     header("Location: index.php");
     exit();

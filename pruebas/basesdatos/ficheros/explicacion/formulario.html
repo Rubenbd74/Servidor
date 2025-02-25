@@ -1,0 +1,35 @@
+<!-- 
+En primer lugar, asegúrese de que PHP está configurado para permitir la carga de 
+archivos. En su "php.ini" archivo, busque la directiva file_uploads, y configurarlo en On:
+
+file_uploads = On
+
+Creamos un formulario HTML que permiten a los usuarios elegir el archivo de imagen 
+que desea cargar: 
+-->
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            Seleccionar un fichero:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload Image" name="submit">
+        </form>
+    </body>
+</html>
+
+<!--
+Algunas reglas a seguir para el formulario HTML anterior:
+    - Asegúrar de que el formulario utiliza method = "post"
+    - El formulario también necesita el following atributo: enctype = "/ form-data 
+    multiparte". Se especifica que el tipo de contenido a utilizar cuando enviar el formulario.
+
+Sin los requisitos anteriores, la carga de archivos no funcionará.
+Otras cosas a destacar:
+
+    - El type="file" atributo de la <input> etiqueta muestra el campo de entrada como un 
+    archivo de control de selección, con un "Browse" botón situado junto al control de entrada.
+
+El formulario anterior envía datos a un archivo llamado "upload.php" , lo que vamos a 
+crear otra.
+-->
