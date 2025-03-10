@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Peliculas;
 use Illuminate\Http\Request;
 
 class CatalogController extends Controller
@@ -170,12 +170,13 @@ class CatalogController extends Controller
     );
     public function getIndex()
     {
-        return view('catalog.index', array('arrayPeliculas'=>$this->arrayPeliculas));
+        return view('catalog.index', compact ('peliculas'));
     }
 
     public function getShow($id)
     {
-        return view('catalog.show', array('id'=>$id));
+        $peliculas = Peliculas::all();
+        return view('catalog.show', compact('peliculas'));
     }
 
     public function getCreate()

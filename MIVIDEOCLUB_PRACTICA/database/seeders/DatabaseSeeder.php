@@ -177,6 +177,7 @@ class DatabaseSeeder extends Seeder
 
         self::seedCatalog();
         $this->command->info('Tabla catálogo inicializada con datos!');
+        self::showCatalog();
 
         User::factory()->create([
             'name' => 'Test User',
@@ -186,20 +187,18 @@ class DatabaseSeeder extends Seeder
 
 
     
-        private function seedCatalog(){
+    private function seedCatalog(){
             \DB::table('peliculas')->delete();
 
-            foreach( $this->arrayPeliculas as $pelicula ) {
-                $p = new Peliculas;
-                $p->titulo = $pelicula['titulo'];
-                $p->año = $pelicula['año'];
-                $p->director = $pelicula['director'];
-                $p->poster = $pelicula['poster'];
-                $p->alquilado = $pelicula['alquilado'];
-                $p->sinopsis = $pelicula['sinopsis'];
-                $p->save();
-               }
-               
-        }
-    
+        foreach( $this->arrayPeliculas as $pelicula ) {
+            $p = new Peliculas;
+            $p->titulo = $pelicula['titulo'];
+            $p->año = $pelicula['año'];
+            $p->director = $pelicula['director'];
+            $p->poster = $pelicula['poster'];
+            $p->alquilado = $pelicula['alquilado'];
+            $p->sinopsis = $pelicula['sinopsis'];
+            $p->save();
+        }     
+    }
 }

@@ -1,7 +1,23 @@
 @extends('layouts.master')
 @section('content')Listado de peliculas
 
-<div class="row">
+<h1>Películas</h1>
+
+<ul>
+    @foreach($peliculas as $pelicula)
+        <li>
+            <h2>{{ $pelicula->titulo }}</h2>
+            <p>Año: {{ $pelicula->año }}</p>
+            <p>Director: {{ $pelicula->director }}</p>
+            <p>Poster: <img src="{{ $pelicula->poster }}" alt="Poster"></p>
+            <p>Alquilado: {{ $pelicula->alquilado ? 'Sí' : 'No' }}</p>
+            <p>Sinopsis: {{ $pelicula->sinopsis }}</p>
+        </li>
+    @endforeach
+</ul>
+
+
+<!--<div class="row">
     @foreach( $arrayPeliculas as $key => $pelicula )
         <div class="col-xs-6 col-sm-4 col-md-3 text-center">
             <a href="{{ url('/catalog/show/' . $key ) }}">
@@ -9,6 +25,6 @@
                 <h4 style="min-height:45px;margin:5px 0 10px 0">{{$pelicula['title']}}</h4>
             </a>
     </div> @endforeach
-</div>
+</div>-->
 
 @stop
