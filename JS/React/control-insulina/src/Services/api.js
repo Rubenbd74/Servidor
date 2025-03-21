@@ -1,13 +1,16 @@
 export const fetchUsers = async () => {
   try {
     const response = await fetch("http://localhost:8080/Servidor/JS/React/control-insulina/api/Users.php");
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-    return await response.json();
+    if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+    
+    const data = await response.json();
+    return Array.isArray(data) ? data : [];
   } catch (error) {
     console.error("Error fetching users:", error);
     return [];
   }
 };
+
 
 export const fetchStats = async () => {
   try {
