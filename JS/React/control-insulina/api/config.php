@@ -7,7 +7,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 $host = "localhost";
 $user = "root";
 $password = "";
-$dbname = "insulin_db";
+$dbname = "insulina_db";
 
 $conn = new mysqli($host, $user, $password, $dbname);
 if ($conn->connect_error) {

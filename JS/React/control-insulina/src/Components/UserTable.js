@@ -1,6 +1,6 @@
 const UserTable = ({ users, refreshUsers }) => {
     const deleteUser = async (username) => {
-      await fetch(`http://localhost/api/delete_user.php?username=${username}`, { method: "DELETE" });
+      await fetch(`http://localhost/Servidor/JS/React/control-insulina/api/Users.php?username=${username}`, { method: "DELETE" });
       refreshUsers();
     };
   
@@ -21,7 +21,7 @@ const UserTable = ({ users, refreshUsers }) => {
               <td>{user.name} {user.lastname}</td>
               <td>{user.birthdate}</td>
               <td>
-                <button onClick={() => deleteUser(user.username)}>❌ Eliminar</button>
+                <button onClick={() => deleteUser(user.username)}>X Eliminar</button>
               </td>
             </tr>
           ))}
