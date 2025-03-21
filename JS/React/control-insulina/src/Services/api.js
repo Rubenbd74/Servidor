@@ -11,11 +11,11 @@ export const fetchUsers = async () => {
 
 export const fetchStats = async () => {
   try {
-    const res = await fetch("http://localhost:8080/Servidor/JS/React/control-insulina/api/Stats.php");
-    if (!res.ok) {
-      throw new Error(`Error fetching stats: ${res.status}`);
+    const response = await fetch("http://localhost:8080/Servidor/JS/React/control-insulina/api/Stats.php");
+    if (!response.ok) {
+      throw new Error(`Error fetching stats: ${response.status}`);
     }
-    const data = await res.json();
+    const data = await response.json();
     return data;
   } catch (error) {
     console.error(error);
@@ -25,17 +25,17 @@ export const fetchStats = async () => {
 
 export const updateUser = async (user) => {
   try {
-    const res = await fetch(`http://localhost:8080/Servidor/JS/React/control-insulina/api/Users.php?id=${user.id}`, {
+    const response = await fetch(`http://localhost:8080/Servidor/JS/React/control-insulina/api/Users.php?id=${user.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
     });
-    if (!res.ok) {
-      throw new Error(`Error updating user: ${res.status}`);
+    if (!response.ok) {
+      throw new Error(`Error updating user: ${response.status}`);
     }
-    const data = await res.json();
+    const data = await response.json();
     return data;
   } catch (error) {
     console.error(error);
@@ -45,13 +45,13 @@ export const updateUser = async (user) => {
 
 export const deleteUser = async (id) => {
   try {
-    const res = await fetch(`http://localhost:8080/Servidor/JS/React/control-insulina/api/Users.php?id=${id}`, {
+    const response = await fetch(`http://localhost:8080/Servidor/JS/React/control-insulina/api/Users.php?id=${id}`, {
       method: "DELETE",
     });
-    if (!res.ok) {
-      throw new Error(`Error deleting user: ${res.status}`);
+    if (!response.ok) {
+      throw new Error(`Error deleting user: ${response.status}`);
     }
-    return res.ok;
+    return response.ok;
   } catch (error) {
     console.error(error);
     throw error;
@@ -60,17 +60,17 @@ export const deleteUser = async (id) => {
 
 export const addUser = async (user) => {
   try {
-    const res = await fetch("http://localhost:8080/Servidor/JS/React/control-insulina/api/Users.php", {
+    const response = await fetch("http://localhost:8080/Servidor/JS/React/control-insulina/api/Users.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
     });
-    if (!res.ok) {
-      throw new Error(`Error adding user: ${res.status}`);
+    if (!response.ok) {
+      throw new Error(`Error adding user: ${response.status}`);
     }
-    const data = await res.json();
+    const data = await response.json();
     return data;
   } catch (error) {
     console.error(error);

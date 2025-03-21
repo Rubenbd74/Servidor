@@ -38,7 +38,7 @@ CREATE TABLE `hiperglucemia` (
   `glucosa` int(11) NOT NULL,
   `hora` time NOT NULL,
   `correccion` int(11) NOT NULL,
-  `tipo_comida` enum('desayuno','comida','cena',) NOT NULL,
+  `tipo_comida` enum('desayuno','comida','cena') NOT NULL,
   `fecha` date NOT NULL,
   `id_usu` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -68,7 +68,7 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id_usu`, `fecha_nacimiento`, `nombre`, `apellidos`, `usuario`, `contra`) VALUES
 (1, '2000-06-11', 'Ruben', 'Boquete', 'ruben123', 'Ruben123'),
-(2, '0001-01-1', 'Ruben2', 'Boquete2', 'ruben456', 'Ruben456'),;
+(2, '2001-01-01', 'Ruben2', 'Boquete2', 'ruben456', 'Ruben456');
 
 -- Índices tablas
 

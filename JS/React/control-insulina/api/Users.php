@@ -1,6 +1,5 @@
 <?php
-require "config.php";
-
+require "config.php";  
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
@@ -12,17 +11,17 @@ switch ($method) {
     case 'GET':
         if (isset($_GET['id'])) {
             $id = intval($_GET['id']);
-            $usuario = getUsuarioById($id, $pdo);
+            $usuario = getUsuarioById($id);
             echo json_encode($usuario ?: ['error' => "No se encontró ningún usuario con ID $id."]);
         } else {
-            $usuarios = getAllUsuarios($pdo);
+            $usuarios = getAllUsuarios();
             echo json_encode($usuarios);
         }
         break;
     case 'POST':
         $input = json_decode(file_get_contents('php://input'), true);
         if (isset($input['fecha_nacimiento'], $input['nombre'], $input['apellidos'], $input['usuario'], $input['contra'])) {
-            $nuevaUsuarioId = createUsuario($input, $pdo);
+            $nuevaUsuarioId = createUsuario($input);
             http_response_code(201); // Código de creación exitosa
             echo json_encode(['id_usu' => $nuevaUsuarioId]);
         } else {
@@ -33,7 +32,7 @@ switch ($method) {
     case 'PUT':
         $input = json_decode(file_get_contents('php://input'), true);
         if (isset($input['id_usu'], $input['fecha_nacimiento'], $input['nombre'], $input['apellidos'], $input['usuario'], $input['contra'])) {
-            $actualizada = updateUsuarioById($input['id_usu'], $input, $pdo);
+            $actualizada = updateUsuarioById($input['id_usu'], $input);
             echo json_encode(['updated_rows' => $actualizada]);
         } else {
             http_response_code(400); // Código de error: solicitud incorrecta
@@ -43,7 +42,7 @@ switch ($method) {
     case 'DELETE':
         $input = json_decode(file_get_contents('php://input'), true);
         if (isset($input['id'])) {
-            $resultado = deleteUsuarioById($input['id'], $pdo);
+            $resultado = deleteUsuarioById($input['id']);
             echo json_encode(['message' => "Usuario con ID {$input['id']} eliminado correctamente.", 'deleted_rows' => $resultado]);
         } else {
             http_response_code(400); // Código de error: solicitud incorrecta
@@ -56,7 +55,8 @@ switch ($method) {
         break;
 }
 
-function obtenerUsuarios() {
+// Obtener todos los usuarios
+function getAllUsuarios() {
     global $conn;
     $sql = "SELECT id_usu, fecha_nacimiento, nombre, apellidos, usuario FROM usuario";
     $result = $conn->query($sql);
@@ -65,48 +65,44 @@ function obtenerUsuarios() {
     while ($row = $result->fetch_assoc()) {
         $usuarios[] = $row;
     }
-    echo json_encode($usuarios);
+    return $usuarios;
 }
 
-function agregarUsuario() {
+// Obtener un usuario por ID
+function getUsuarioById($id) {
     global $conn;
-    $data = json_decode(file_get_contents("php://input"), true);
-    
-    if (!isset($data['fecha_nacimiento'], $data['nombre'], $data['apellidos'], $data['usuario'], $data['contra'])) {
-        http_response_code(400);
-        echo json_encode(["message" => "Datos incompletos"]);
-        return;
-    }
-    
+    $sql = "SELECT id_usu, fecha_nacimiento, nombre, apellidos, usuario FROM usuario WHERE id_usu = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    return $result->fetch_assoc();
+}
+
+// Crear un nuevo usuario
+function createUsuario($data) {
+    global $conn;
     $fecha_nacimiento = $data['fecha_nacimiento'];
     $nombre = $data['nombre'];
     $apellidos = $data['apellidos'];
     $usuario = $data['usuario'];
     $contra = password_hash($data['contra'], PASSWORD_DEFAULT);
-    
+
     $sql = "INSERT INTO usuario (fecha_nacimiento, nombre, apellidos, usuario, contra) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssss", $fecha_nacimiento, $nombre, $apellidos, $usuario, $contra);
     
     if ($stmt->execute()) {
-        echo json_encode(["message" => "Usuario agregado exitosamente"]);
+        return $stmt->insert_id;  // Devuelve el ID del nuevo usuario
     } else {
         http_response_code(500);
-        echo json_encode(["message" => "Error al agregar usuario"]);
+        echo json_encode(["error" => "Error al agregar el usuario."]);
     }
 }
 
-function actualizarUsuario() {
+// Actualizar un usuario por ID
+function updateUsuarioById($id_usu, $data) {
     global $conn;
-    $data = json_decode(file_get_contents("php://input"), true);
-    
-    if (!isset($data['id_usu'], $data['nombre'], $data['apellidos'], $data['usuario'])) {
-        http_response_code(400);
-        echo json_encode(["message" => "Datos incompletos"]);
-        return;
-    }
-    
-    $id_usu = $data['id_usu'];
     $nombre = $data['nombre'];
     $apellidos = $data['apellidos'];
     $usuario = $data['usuario'];
@@ -116,33 +112,25 @@ function actualizarUsuario() {
     $stmt->bind_param("sssi", $nombre, $apellidos, $usuario, $id_usu);
     
     if ($stmt->execute()) {
-        echo json_encode(["message" => "Usuario actualizado exitosamente"]);
+        return $stmt->affected_rows;
     } else {
         http_response_code(500);
-        echo json_encode(["message" => "Error al actualizar usuario"]);
+        echo json_encode(["error" => "Error al actualizar el usuario."]);
     }
 }
 
-function borrarUsuario() {
+// Eliminar un usuario por ID
+function deleteUsuarioById($id_usu) {
     global $conn;
-    parse_str(file_get_contents("php://input"), $data);
-    
-    if (!isset($data['id_usu'])) {
-        http_response_code(400);
-        echo json_encode(["message" => "ID de usuario requerido"]);
-        return;
-    }
-    
-    $id_usu = $data['id_usu'];
     $sql = "DELETE FROM usuario WHERE id_usu = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id_usu);
     
     if ($stmt->execute()) {
-        echo json_encode(["message" => "Usuario eliminado exitosamente"]);
+        return $stmt->affected_rows;
     } else {
         http_response_code(500);
-        echo json_encode(["message" => "Error al eliminar usuario"]);
+        echo json_encode(["error" => "Error al eliminar el usuario."]);
     }
 }
 ?>
