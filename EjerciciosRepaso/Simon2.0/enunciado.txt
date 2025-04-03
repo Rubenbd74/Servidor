@@ -1,0 +1,18 @@
+añadir una tabla de nivel que guarde el valor de la dificultad.
+añadir usuario Yolanda con rol administrador -1- a la base de datos.
+
+Módulo de seleccion de dificultad que selecciona el -administrador- con un desplegable: 
+
+1 Dificultad facil, combinacion de 3.
+2 Dificultad media, combinacion de 4.
+3 Dificultad dificil, combinacion de 5.
+
+debemos pintar con una sola funcion, que debe diferenciar si debe pintar 3, 4 o 5 circulos y los colores.
+-pasar el valor del option en un for ?-
+
+contar las pulsaciones para saber que circulo he de pintar.
+Si boton rojo
+Si pulsaciones = 0
+pulsaciones ++;
+guardar sesion
+llamar pintar circulos
