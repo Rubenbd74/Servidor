@@ -1,0 +1,7 @@
+Cartas levantadas se inicializa a 0, aumenta al levantar una carta
+La comprobacion de la pareja se hace mediante el indice de las 2 en el array
+
+Al fallar se resta 1 punto, al acertar se suma 1
+por cada carta levantada, se suma esa cantidad a la columna Extra.
+
+Al principio se muestra todas las cartas en negro, hasta que se levante una, que mostrara dicha carta
