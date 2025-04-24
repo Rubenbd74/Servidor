@@ -1,0 +1,10 @@
+Array de emojis guardado en sesion, pueden repetirse, de manera aleatoria.
+Al llegar a 5 o seleccionar grabar cambia de pantalla
+
+El numero de emojis indica el numero de contactos a grabar, el formulario ira dentro de un bucle.
+Un solo boton grabar
+
+Tras grabar ofrecer 3 opciones:
+    volver al login
+    introducir mas contactos para el usuario actual
+    Mostrar el numero total de contactos de cada usuario
